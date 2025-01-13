@@ -1,0 +1,40 @@
+body {
+  background-color: #ffe6f0; /* Nền màu hồng nhạt */
+}
+
+.container {
+  background-color: #ffffff; /* Nền trắng cho container */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng shadow */
+}
+
+.table-warning {
+  background-color: #fff3cd; /* Màu vàng nhạt */
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f8d7da; /* Hiệu ứng hover đỏ nhạt */
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.input-group .form-control {
+  border-radius: 0;
+}
+
+.input-group .btn {
+  border-radius: 0;
+}

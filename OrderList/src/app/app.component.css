@@ -1,0 +1,11 @@
+h1{
+  font-family: 'Georgia', serif;
+
+  color: #000080;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  text-shadow: 1px 1px #cccccc;
+}

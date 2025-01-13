@@ -1,0 +1,103 @@
+<div class="container mt-4 bg-light p-4 rounded">
+
+  <!--Seach-->
+  <div class="input-group mb-4">
+    <input type="text" class="form-control" placeholder="Tìm kiếm Order ID, Tên khách hàng, SĐT"
+      [(ngModel)]="searchText" />
+    <button class="btn btn-primary" (click)="searchOrders()">
+      <i class="bi bi-search"></i> Tìm kiếm
+    </button>
+    <button class="btn btn-success ms-2" (click)="moveToAddOrder()">
+      <i class="bi bi-plus-circle"></i> Thêm đơn hàng
+    </button>
+  </div>
+
+  <!-- List -->
+  <div class="table-responsive">
+    <table class="table table-hover align-middle table-bordered">
+      <thead class="table-warning text-center">
+        <tr>
+          <th>Order ID</th>
+          <th>Order Date</th>
+          <th>Customer Name</th>
+          <th>Phone Number</th>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of paginatedOrders">
+          <td class="text-center">{{ order.id }}</td>
+          <td>{{ order.date | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ order.customerName }}</td>
+          <td>{{ order.phoneNumber }}</td>
+          <td>{{ order.productName }}</td>
+          <td class="text-center">{{ order.quantity }}</td>
+          <td class="text-end">{{ order.price | currency }}</td>
+          <td class="text-end">{{ order.total | currency }}</td>
+          <td class="text-center">
+            <button class="btn btn-sm btn-warning me-1" (click)="editOrder(order)" title="Chỉnh sửa">
+              <i class="bi bi-pencil-fill"></i>
+            </button>
+            <button class="btn btn-sm btn-danger" (click)="deleteOrder(order.id)" title="Xóa">
+              <i class="bi bi-trash-fill"></i>
+            </button>
+          </td>
+        </tr>
+        <tr *ngIf="paginatedOrders.length === 0">
+          <td colspan="9" class="text-center text-muted py-3">
+            Không có đơn hàng nào.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Form chỉnh sửa ad-->
+  <div *ngIf="selectedOrder" class="mt-4 p-3 border">
+    <h3>Chỉnh Sửa Đơn Hàng</h3>
+    <form (ngSubmit)="saveOrder()">
+      <div class="form-group">
+        <label>Customer Name:</label>
+        <input type="text" class="form-control" [(ngModel)]="selectedOrder.customerName" name="customerName" />
+      </div>
+      <div class="form-group">
+        <label>Phone Number:</label>
+        <input type="text" class="form-control" [(ngModel)]="selectedOrder.phoneNumber" name="phoneNumber" />
+      </div>
+      <div class="form-group">
+        <label>Product Name:</label>
+        <input type="text" class="form-control" [(ngModel)]="selectedOrder.productName" name="productName" />
+      </div>
+      <div class="form-group">
+        <label>Quantity:</label>
+        <input type="number" class="form-control" [(ngModel)]="selectedOrder.quantity" name="quantity" />
+      </div>
+      <div class="form-group">
+        <label>Price:</label>
+        <input type="number" class="form-control" [(ngModel)]="selectedOrder.price" name="price" />
+      </div>
+      <div class="form-group mt-3">
+        <button type="submit" class="btn btn-success" (click)="saveOrder()">Save</button>
+        <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<nav aria-label="Page navigation example" *ngIf="totalPages > 1">
+  <ul class="pagination justify-content-center">
+    <li class="page-item" [class.disabled]="currentPage === 1" (click)="goToPage(currentPage - 1)">
+      <a class="page-link" href="javascript:void(0)">Previous</a>
+    </li>
+    <li *ngFor="let page of [].constructor(totalPages); let i = index" class="page-item"
+      [class.active]="i + 1 === currentPage" (click)="goToPage(i + 1)">
+      <a class="page-link" href="javascript:void(0)">{{ i + 1 }}</a>
+    </li>
+    <li class="page-item" [class.disabled]="currentPage === totalPages" (click)="goToPage(currentPage + 1)">
+      <a class="page-link" href="javascript:void(0)">Next</a>
+    </li>
+  </ul>
+</nav>
