@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "taPm/O2B8Ok=",
+  "dgSpecHash": "jQwU18cZclY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\NZWalks\\NZWalks.csproj",
+  "projectFilePath": "C:\\Users\\DELL\\Desktop\\gitFPT\\NZWalks\\NZWalks.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\WebApiWithPostgres.props" />
+</Project>

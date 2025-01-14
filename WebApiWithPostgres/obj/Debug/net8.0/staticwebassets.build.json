@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "UEKQTMrMLd9ubqkFrAibi5SZHugZ1sOwJztXbvvKar0=",
+  "Source": "WebApiWithPostgres",
+  "BasePath": "_content/WebApiWithPostgres",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

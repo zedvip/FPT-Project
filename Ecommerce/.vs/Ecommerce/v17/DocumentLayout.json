@@ -1,57 +1,57 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\",
+  "WorkspaceRootPath": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\udemy(asp.net)\\ecommerce\\service\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:service\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\udemy(asp.net)\\ecommerce\\service\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:service\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\udemy(asp.net)\\ecommerce\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\udemy(asp.net)\\ecommerce\\repositories\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:repositories\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\udemy(asp.net)\\ecommerce\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\udemy(asp.net)\\ecommerce\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\udemy(asp.net)\\ecommerce\\migrations\\20241216082134_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:migrations\\20241216082134_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\udemy(asp.net)\\ecommerce\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\udemy(asp.net)\\ecommerce\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\udemy(asp.net)\\ecommerce\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\udemy(asp.net)\\ecommerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\gitfpt\\ecommerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\udemy(asp.net)\\ecommerce\\ecommerce.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\gitfpt\\ecommerce\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\gitfpt\\ecommerce\\service\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:service\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\gitfpt\\ecommerce\\service\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:service\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\gitfpt\\ecommerce\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\gitfpt\\ecommerce\\repositories\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:repositories\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\gitfpt\\ecommerce\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\gitfpt\\ecommerce\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\gitfpt\\ecommerce\\migrations\\20241216082134_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:migrations\\20241216082134_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\gitfpt\\ecommerce\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\gitfpt\\ecommerce\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\gitfpt\\ecommerce\\ecommerce.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
       "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:ecommerce.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\udemy(asp.net)\\ecommerce\\ecommerce.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|c:\\users\\dell\\desktop\\gitfpt\\ecommerce\\ecommerce.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{177AD3C3-635E-494F-BA28-5D5C9580DD51}|Ecommerce.csproj|solutionrelative:ecommerce.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
@@ -62,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,153 +70,145 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Models\\Order.cs",
-              "RelativeDocumentMoniker": "Models\\Order.cs",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Models\\Order.cs",
-              "RelativeToolTip": "Models\\Order.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T07:40:41.886Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T07:42:49.406Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "OrderController.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Controllers\\OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "Controllers\\OrderController.cs",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Controllers\\OrderController.cs",
               "RelativeToolTip": "Controllers\\OrderController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T07:57:49.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-16T07:57:49.234Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\appsettings.json",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-12-16T07:58:13.059Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "OrderRepository.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Repositories\\OrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Repositories\\OrderRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\OrderRepository.cs",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Repositories\\OrderRepository.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Repositories\\OrderRepository.cs",
               "RelativeToolTip": "Repositories\\OrderRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T07:42:01.251Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IOrderRepository.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Repositories\\IOrderRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\IOrderRepository.cs",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Repositories\\IOrderRepository.cs",
-              "RelativeToolTip": "Repositories\\IOrderRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T07:56:39.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-16T07:42:01.251Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "OrderService.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Service\\OrderService.cs",
-              "RelativeDocumentMoniker": "Service\\OrderService.cs",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Service\\OrderService.cs",
-              "RelativeToolTip": "Service\\OrderService.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAqwBgAAAA0AAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T07:42:35.189Z",
+              "WhenOpened": "2024-12-16T07:36:34.902Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IOrderService.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Service\\IOrderService.cs",
-              "RelativeDocumentMoniker": "Service\\IOrderService.cs",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Service\\IOrderService.cs",
-              "RelativeToolTip": "Service\\IOrderService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T07:57:10.125Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "20241216082134_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Migrations\\20241216082134_InitialCreate.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241216082134_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Migrations\\20241216082134_InitialCreate.cs",
-              "RelativeToolTip": "Migrations\\20241216082134_InitialCreate.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAQwCYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T08:45:50.967Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-16T07:42:49.406Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ApplicationDbContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "RelativeToolTip": "Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Repositories\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\IOrderRepository.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Repositories\\IOrderRepository.cs",
+              "RelativeToolTip": "Repositories\\IOrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T08:45:54.007Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-16T07:56:39.1Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAuwAwAAAAXAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Service\\OrderService.cs",
+              "RelativeDocumentMoniker": "Service\\OrderService.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Service\\OrderService.cs",
+              "RelativeToolTip": "Service\\OrderService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAA6wBgAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T07:36:34.902Z"
+              "WhenOpened": "2024-12-16T07:42:35.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Service\\IOrderService.cs",
+              "RelativeDocumentMoniker": "Service\\IOrderService.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Service\\IOrderService.cs",
+              "RelativeToolTip": "Service\\IOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T07:57:10.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20241216082134_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Migrations\\20241216082134_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241216082134_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Migrations\\20241216082134_InitialCreate.cs",
+              "RelativeToolTip": "Migrations\\20241216082134_InitialCreate.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwCYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T08:45:50.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ApplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T08:45:54.007Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "Models\\Order.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Models\\Order.cs",
+              "RelativeToolTip": "Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T07:40:41.886Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "Ecommerce.http",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Ecommerce.http",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Ecommerce.http",
               "RelativeDocumentMoniker": "Ecommerce.http",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Ecommerce.http",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Ecommerce.http",
               "RelativeToolTip": "Ecommerce.http",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
@@ -226,9 +218,9 @@
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "Ecommerce.csproj",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Ecommerce.csproj",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Ecommerce.csproj",
               "RelativeDocumentMoniker": "Ecommerce.csproj",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Ecommerce.csproj",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Ecommerce.csproj",
               "RelativeToolTip": "Ecommerce.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",

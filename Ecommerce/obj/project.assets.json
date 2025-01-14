@@ -3363,11 +3363,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Ecommerce.csproj",
+      "projectUniqueName": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Ecommerce.csproj",
       "projectName": "Ecommerce",
-      "projectPath": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\Ecommerce.csproj",
+      "projectPath": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\Ecommerce.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\Ecommerce\\obj\\",
+      "outputPath": "C:\\Users\\DELL\\Desktop\\gitFPT\\Ecommerce\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

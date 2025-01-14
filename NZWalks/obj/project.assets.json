@@ -3374,11 +3374,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\NZWalks\\NZWalks.csproj",
+      "projectUniqueName": "C:\\Users\\DELL\\Desktop\\gitFPT\\NZWalks\\NZWalks.csproj",
       "projectName": "NZWalks",
-      "projectPath": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\NZWalks\\NZWalks.csproj",
+      "projectPath": "C:\\Users\\DELL\\Desktop\\gitFPT\\NZWalks\\NZWalks.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\NZWalks\\obj\\",
+      "outputPath": "C:\\Users\\DELL\\Desktop\\gitFPT\\NZWalks\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
