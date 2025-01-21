@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\WebApiWithPostgres\\WebApiWithPostgres.csproj": {}
+    "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\WebApiWithPostgres.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\WebApiWithPostgres\\WebApiWithPostgres.csproj": {
+    "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\WebApiWithPostgres.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\WebApiWithPostgres\\WebApiWithPostgres.csproj",
+        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\WebApiWithPostgres.csproj",
         "projectName": "WebApiWithPostgres",
-        "projectPath": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\WebApiWithPostgres\\WebApiWithPostgres.csproj",
+        "projectPath": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\WebApiWithPostgres.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DELL\\Desktop\\Udemy(ASP.NET)\\WebApiWithPostgres\\obj\\",
+        "outputPath": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

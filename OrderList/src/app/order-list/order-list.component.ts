@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Store } from '../app.store';
+import { OrderService } from '../services/order.service'; // Đảm bảo đường dẫn đúng
 
 @Component({
   selector: 'app-order-list',
@@ -16,30 +16,56 @@ export class OrderListComponent implements OnInit {
   ordersList: any[] = [];
   orders: any[] = [];
   selectedOrder: any = null;
-  constructor(private router: Router) {}
+  loading: boolean = false;
+
+  //phan trang
+  currentPage: number = 1;
+  itemsPerPage: number = 5;
+  totalPages: number = 1;
+  paginatedOrders: any[] = [];
+
+  constructor(
+    private router: Router,
+    private orderService: OrderService // Inject service vào constructor
+  ) {}
 
   ngOnInit(): void {
     this.getOrderData();
   }
 
   getOrderData() {
-    this.ordersList = Store.getOrders();
-    this.orders = [...this.ordersList];
-    this.updatePagination();
+    this.loading = true;
+    this.orderService.getOrders().subscribe(
+      (data) => {
+        this.ordersList = data.map((order, index) => ({
+          ...order,
+          displayId: index + 1, // Gán số thứ tự liên tục
+        }));
+        this.orders = [...this.ordersList];
+        this.updatePagination();
+        this.loading = false;
+      },
+      (error) => {
+        console.error('Error fetching orders:', error);
+        this.loading = false;
+      }
+    );
   }
 
-  // Tìm kiếm danh sách
-  searchOrders() {
+  searchOrders(callUpdatePagination: boolean = true) {
     if (!this.searchText.trim()) {
       this.orders = [...this.ordersList];
-      this.updatePagination();
+
+      if (callUpdatePagination) this.updatePagination();
       return;
     }
 
-    if (!isNaN(Number(this.searchText.trim()))) {
-      const searchId = Number(this.searchText.trim());
+    const searchId = Number(this.searchText.trim());
+    if (!isNaN(searchId)) {
+      // Tìm kiếm theo ID
       this.orders = this.ordersList.filter((order) => order.id === searchId);
     } else {
+      // Tìm kiếm theo tên hoặc số điện thoại
       this.orders = this.ordersList.filter(
         (order) =>
           order.customerName
@@ -48,23 +74,21 @@ export class OrderListComponent implements OnInit {
           order.phoneNumber.includes(this.searchText.trim())
       );
     }
-    this.updatePagination();
+
+    // Sắp xếp kết quả tìm kiếm theo ID
+    this.orders.sort((a, b) => a.id - b.id);
+
+    if (callUpdatePagination) this.updatePagination();
   }
 
-// Phân trang
-  currentPage: number = 1; // Trang hiện tại
-  itemsPerPage: number = 5; // Số item mỗi trang
-  totalPages: number = 1; // Tổng số trang
-  paginatedOrders: any[] = []; // Danh sách đơn hàng hiển thị trên trang hiện tại
-  // Phân trang
   updatePagination() {
     this.totalPages = Math.ceil(this.orders.length / this.itemsPerPage);
+    this.searchOrders(false);
     this.paginatedOrders = this.orders.slice(
       (this.currentPage - 1) * this.itemsPerPage,
       this.currentPage * this.itemsPerPage
     );
   }
-
   goToPage(page: number) {
     if (page >= 1 && page <= this.totalPages) {
       this.currentPage = page;
@@ -72,19 +96,19 @@ export class OrderListComponent implements OnInit {
     }
   }
 
-  // Xóa đơn hàng
   deleteOrder(orderId: number) {
-    const updatedOrders = this.ordersList.filter((order) => order.id !== orderId);
-
-    updatedOrders.forEach((order, index) => {
-      order.id = index + 1; // Cập nhật lại ID theo thứ tự
-    });
-
-    Store.setOrders(updatedOrders);
-    this.getOrderData();
+    if (confirm('Bạn chắc chắn muốn xóa đơn hàng này?')) {
+      this.orderService.deleteOrder(orderId).subscribe(
+        () => {
+          this.getOrderData();
+        },
+        (error) => {
+          console.error('Error deleting order:', error);
+        }
+      );
+    }
   }
 
-  // Chỉnh sửa đơn hàng
   editOrder(order: any) {
     this.selectedOrder = { ...order };
   }
@@ -101,16 +125,26 @@ export class OrderListComponent implements OnInit {
       return;
     }
 
+    // Tính tổng
     this.selectedOrder.total =
       this.selectedOrder.quantity * this.selectedOrder.price;
 
-    const updatedOrders = this.ordersList.map((order) =>
-      order.id === this.selectedOrder.id ? this.selectedOrder : order
+    this.orderService.updateOrder(this.selectedOrder).subscribe(
+      () => {
+        // Cập nhật trực tiếp trong danh sách
+        const index = this.ordersList.findIndex(
+          (order) => order.id === this.selectedOrder.id
+        );
+        if (index !== -1) {
+          this.ordersList[index] = { ...this.selectedOrder }; // Cập nhật thông tin đơn hàng
+          this.updatePagination(); // Cập nhật lại danh sách hiển thị
+        }
+        this.selectedOrder = null; // Đóng form chỉnh sửa
+      },
+      (error) => {
+        console.error('Error updating order:', error);
+      }
     );
-    Store.setOrders(updatedOrders);
-
-    this.getOrderData();
-    this.selectedOrder = null;
   }
 
   cancelEdit() {

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApiWithPostgres")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e452a547910a8504b562085e3997b682ab6c2a4f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c68fbab5cae4e7b898ded427f63ee9930a7db3f")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApiWithPostgres")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApiWithPostgres")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

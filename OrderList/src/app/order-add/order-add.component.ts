@@ -1,7 +1,10 @@
+// TypeScript Code
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { OrderService } from '../services/order.service';
+
 @Component({
   selector: 'app-add-order',
   standalone: true,
@@ -10,13 +13,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./order-add.component.css'],
 })
 export class AddOrderComponent {
-
-  
   @Output() orderAdded = new EventEmitter<any>();
 
   newOrder = {
     id: 0,
-    date: new Date(),
+    OrderDate: new Date().toISOString(),
     customerName: '',
     phoneNumber: '',
     productName: '',
@@ -25,13 +26,22 @@ export class AddOrderComponent {
     total: 0,
   };
 
-  constructor(private router: Router) {} // Inject Router
+  selectedOrder: any = null;
+  searchText = '';
+  paginatedOrders: any[] = [];
+  orders: any[] = []; // To hold all orders
+  currentPage = 1;
+  totalPages = 1;
+  itemsPerPage = 5;
+
+  constructor(private router: Router, private orderAddService: OrderService) {}
 
   calculateTotal() {
     this.newOrder.total = this.newOrder.quantity * this.newOrder.price;
   }
 
   addOrder() {
+    this.newOrder.OrderDate = new Date().toISOString();
     if (
       this.newOrder.customerName.trim() &&
       this.newOrder.phoneNumber.trim() &&
@@ -39,20 +49,18 @@ export class AddOrderComponent {
       this.newOrder.quantity > 0 &&
       this.newOrder.price > 0
     ) {
-      this.orderAdded.emit({ ...this.newOrder });
-
-      // Lấy danh sách đơn hàng hiện tại từ localStorage
-      let orders = Store.getOrders();
-
-      // Thêm đơn hàng mới vào danh sách
-      this.newOrder.id = orders.length + 1; // Cập nhật ID đơn hàng
-      orders.push(this.newOrder);
-
-      // Lưu lại danh sách đơn hàng vào localStorage
-      Store.setOrders(orders);
-
-      // Reset form sau khi thêm đơn hàng
-      this.resetForm();
+      this.orderAddService.addOrder(this.newOrder).subscribe(
+        (response) => {
+          alert('Đơn hàng đã được thêm thành công!');
+          this.orders.push(response);
+          this.updatePagination();
+          this.resetForm();
+        },
+        (error) => {
+          alert('Có lỗi xảy ra khi thêm đơn hàng vào backend!');
+          this.addOrderToLocalStorage();
+        }
+      );
     } else {
       alert('Vui lòng điền đầy đủ thông tin hợp lệ!');
     }
@@ -61,7 +69,7 @@ export class AddOrderComponent {
   resetForm() {
     this.newOrder = {
       id: 0,
-      date: new Date(),
+      OrderDate: new Date().toISOString(),
       customerName: '',
       phoneNumber: '',
       productName: '',
@@ -71,19 +79,67 @@ export class AddOrderComponent {
     };
   }
 
+  addOrderToLocalStorage() {
+    let orders = Store.getOrders();
+    this.newOrder.id = orders.length + 1;
+    orders.push(this.newOrder);
+    Store.setOrders(orders);
+    alert('Đơn hàng đã được lưu vào localStorage!');
+  }
+
   moveToOrderList() {
     this.router.navigate(['order-list']);
   }
+
+  editOrder(order: any) {
+    this.selectedOrder = { ...order };
+  }
+
+  saveOrder() {
+    if (this.selectedOrder) {
+      this.selectedOrder.date = new Date().toISOString();
+      const index = this.orders.findIndex(o => o.id === this.selectedOrder.id);
+      if (index !== -1) {
+        this.orders[index] = { ...this.selectedOrder };
+        this.updatePagination();
+        this.selectedOrder = null;
+        alert('Đơn hàng đã được cập nhật!');
+      }
+    }
+  }
+
+  cancelEdit() {
+    this.selectedOrder = null;
+  }
+
+  searchOrders() {
+    this.currentPage = 1;
+    this.updatePagination();
+  }
+
+  updatePagination() {
+    const filteredOrders = this.orders.filter(order =>
+      order.customerName.toLowerCase().includes(this.searchText.toLowerCase()) ||
+      order.phoneNumber.includes(this.searchText)
+    );
+    this.totalPages = Math.ceil(filteredOrders.length / this.itemsPerPage);
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    this.paginatedOrders = filteredOrders.slice(startIndex, startIndex + this.itemsPerPage);
+  }
+
+  goToPage(page: number) {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+      this.updatePagination();
+    }
+  }
 }
-// Store để làm việc với localStorage
+
 export const Store = {
-  // Lấy dữ liệu đơn hàng từ localStorage
   getOrders() {
-    let value = localStorage.getItem('OrderData');
+    const value = localStorage.getItem('OrderData');
     return value ? JSON.parse(value) : [];
   },
-
-  // Lưu dữ liệu đơn hàng vào localStorage
   setOrders(data: any) {
     localStorage.setItem('OrderData', JSON.stringify(data));
   },

@@ -1,4 +1,3 @@
-
 using Microsoft.EntityFrameworkCore;
 using WebApiWithPostgres.Data;
 using WebApiWithPostgres.Repositories;
@@ -13,18 +12,29 @@ namespace WebApiWithPostgres
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            // Configure Database
             builder.Services.AddDbContext<AppDbContext>(options =>
-            options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+            // Dependency Injection
             builder.Services.AddScoped<IOrderRepository, OrderRepository>();
             builder.Services.AddScoped<IOrderService, OrderService>();
 
+            // Configure CORS to allow requests from the Angular app
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAngularApp", policy =>
+                {
+                    policy.WithOrigins("http://localhost:4200") // Replace with your frontend URL if different
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
+                });
+            });
 
             var app = builder.Build();
 
@@ -37,8 +47,10 @@ namespace WebApiWithPostgres
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            // Apply CORS policy
+            app.UseCors("AllowAngularApp");
 
+            app.UseAuthorization();
 
             app.MapControllers();
 
