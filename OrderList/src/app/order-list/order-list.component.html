@@ -13,7 +13,7 @@
   </div>
 
   <!-- List -->
-   
+
   <div class="table-responsive">
     <table class="table table-hover align-middle table-bordered">
       <thead class="table-warning text-center">
@@ -31,8 +31,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let order of paginatedOrders">
-
-          <td class="text-center">{{ order.displayId }}</td>
+          <td class="text-center">{{ order.id }}</td>
           <td>{{ order.orderDate ? (order.orderDate | date: 'dd/MM/yyyy') : 'N/A' }}</td>
           <td>{{ order.customerName }}</td>
           <td>{{ order.phoneNumber }}</td>
@@ -41,12 +40,13 @@
           <td class="text-end">{{ order.price | currency }}</td>
           <td class="text-end">{{ order.total | currency }}</td>
           <td class="text-center">
-            <button class="btn btn-sm btn-warning me-1" (click)="editOrder(order)" title="Edit">
+            <button class="btn btn-sm btn-warning me-1" (click)="editOrder(order)" title="Sửa" aria-label="Chỉnh sửa đơn hàng">
               <i class="bi bi-pencil-fill"></i>
             </button>
-            <button class="btn btn-sm btn-danger" (click)="deleteOrder(order.id)" title="Delete">
+            <button class="btn btn-sm btn-danger" (click)="deleteOrder(order.id)" title="Xóa" aria-label="Xóa đơn hàng">
               <i class="bi bi-trash-fill"></i>
             </button>
+
           </td>
         </tr>
         <tr *ngIf="paginatedOrders.length === 0">
@@ -54,6 +54,7 @@
             Không có đơn hàng nào.
           </td>
         </tr>
+
       </tbody>
     </table>
 </div>
@@ -92,18 +93,28 @@
 <br>
 
 
-<!-- phan trang -->
-<nav aria-label="Page navigation example" *ngIf="totalPages > 1">
+<nav aria-label="Page navigation" *ngIf="totalPages > 1">
   <ul class="pagination justify-content-center">
-    <li class="page-item" [class.disabled]="currentPage === 1" (click)="goToPage(currentPage - 1)">
-      <a class="page-link" href="javascript:void(0)">Previous</a>
+    <!-- Previous Page -->
+    <li class="page-item" [class.disabled]="currentPage === 1">
+      <a class="page-link" href="javascript:void(0)" (click)="goToPage(currentPage - 1)">Previous</a>
     </li>
-    <li *ngFor="let page of [].constructor(totalPages); let i = index" class="page-item"
-      [class.active]="i + 1 === currentPage" (click)="goToPage(i + 1)">
-      <a class="page-link" href="javascript:void(0)">{{ i + 1 }}</a>
+
+    <!-- Page Numbers -->
+    <li
+      *ngFor="let page of [].constructor(totalPages); let i = index"
+      class="page-item"
+      [class.active]="i + 1 === currentPage"
+    >
+      <a class="page-link" href="javascript:void(0)" (click)="goToPage(i + 1)">
+        {{ i + 1 }}
+      </a>
     </li>
-    <li class="page-item" [class.disabled]="currentPage === totalPages" (click)="goToPage(currentPage + 1)">
-      <a class="page-link" href="javascript:void(0)">Next</a>
+
+    <!-- Next Page -->
+    <li class="page-item" [class.disabled]="currentPage === totalPages">
+      <a class="page-link" href="javascript:void(0)" (click)="goToPage(currentPage + 1)">Next</a>
     </li>
   </ul>
 </nav>
+

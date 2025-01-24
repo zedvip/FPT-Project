@@ -18,10 +18,26 @@ public class OrderRepository : IOrderRepository
         return await _context.Orders.ToListAsync();
     }
 
-    public async Task<Order?> GetOrderByIdAsync(int id)
+    public async Task<PaginatedList<Order>> GetOrdersPaginatedAsync(int page, int pageSize, string? searchText)
     {
-        return await _context.Orders.FindAsync(id);
+        // Tạo query cơ bản
+        var query = _context.Orders.AsQueryable();
+
+        // Áp dụng bộ lọc nếu có searchText
+        if (!string.IsNullOrEmpty(searchText))
+        {
+           query = query.Where(o =>
+    EF.Functions.Like(o.CustomerName, $"%{searchText}%") ||
+    EF.Functions.Like(o.ProductName, $"%{searchText}%") ||
+    EF.Functions.Like(o.PhoneNumber, $"%{searchText}%"));
+
+        }
+
+        // Sử dụng PaginatedList để phân trang
+        return await PaginatedList<Order>.CreateAsync(query, page, pageSize, searchText);
     }
+
+
 
     public async Task<Order> CreateOrderAsync(Order order)
     {
@@ -44,7 +60,7 @@ public class OrderRepository : IOrderRepository
 
         await _context.SaveChangesAsync();
         return existingOrder;
-    }
+    }   
 
     public async Task<bool> DeleteOrderAsync(int id)
     {
@@ -54,5 +70,10 @@ public class OrderRepository : IOrderRepository
         _context.Orders.Remove(order);
         await _context.SaveChangesAsync();
         return true;
+    }
+
+    public Task<Order?> GetOrdersPaginatedAsync(int id)
+    {
+        throw new NotImplementedException();
     }
 }

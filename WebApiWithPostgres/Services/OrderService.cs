@@ -17,10 +17,11 @@ public class OrderService : IOrderService
         return _repository.GetOrdersAsync();
     }
 
-    public Task<Order?> GetOrderByIdAsync(int id)
-    {
-        return _repository.GetOrderByIdAsync(id);
-    }
+   public Task<PaginatedList<Order>> GetOrdersPaginatedAsync(int page, int pageSize,string? searchText)
+{
+    return _repository.GetOrdersPaginatedAsync(page, pageSize,searchText);
+}
+
 
     public Task<Order> CreateOrderAsync(Order order)
     {
@@ -35,5 +36,15 @@ public class OrderService : IOrderService
     public Task<bool> DeleteOrderAsync(int id)
     {
         return _repository.DeleteOrderAsync(id);
+    }
+
+    Task<IEnumerable<Order>> IOrderService.GetOrdersAsync(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<Order?> GetOrderByIdAsync(int id)
+    {
+        throw new NotImplementedException();
     }
 }

@@ -17,19 +17,34 @@ public class OrdersController : ControllerBase
 
     // GET: api/orders
     [HttpGet]
-    public async Task<IActionResult> GetOrders()
+    public async Task<IActionResult> GetOrders(int page , int pageSize,string? searchText )
     {
-        var orders = await _service.GetOrdersAsync();
-        Task.Delay(500).Wait();
+        // Kiểm tra tham số đầu vào
+        if (page <= 0 || pageSize <= 0)
+        {
+            return BadRequest("Page and pageSize must be greater than zero.");
+        }
 
-        return Ok(orders);
+        // Lấy dữ liệu phân trang
+        var paginatedOrders = await _service.GetOrdersPaginatedAsync(page, pageSize,searchText);
+
+        // Trả về kết quả
+        return Ok(new
+        {
+            paginatedOrders.Items,
+            paginatedOrders.Page,
+            paginatedOrders.PageSize,
+            paginatedOrders.TotalItems,
+            paginatedOrders.TotalPages
+        });
+
     }
 
     // GET: api/orders/{id}
     [HttpGet("{id}")]
     public async Task<IActionResult> GetOrderById(int id)
     {
-        var order = await _service.GetOrderByIdAsync(id);
+        var order = await _service.GetOrdersAsync(id);
         if (order == null)
         {
             return NotFound();
@@ -80,6 +95,4 @@ public class OrdersController : ControllerBase
 
         return NoContent();
     }
-
-
 }

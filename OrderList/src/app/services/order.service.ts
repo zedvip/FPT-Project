@@ -1,34 +1,48 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root' // Đảm bảo service được cung cấp ở root
+  providedIn: 'root', 
 })
 export class OrderService {
-  private apiUrl = 'https://localhost:7009/api/Orders'; // Đường dẫn API của bạn
+  private apiUrl = 'https://localhost:7009/api/Orders';
 
   constructor(private http: HttpClient) {}
 
-  // Lấy danh sách đơn hàng
-  getOrders(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+
+  getOrders(page: number, pageSize: number, searchText: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}`, {
+      params: new HttpParams()
+        .set('page', page.toString())
+        .set('pageSize', pageSize.toString())
+        .set('searchText', searchText),
+    });
   }
 
-  // Thêm đơn hàng mới
+
+searchOrders(query: string, page: number, pageSize: number) {
+  const params = new HttpParams()
+    .set('query', query)
+    .set('page', page.toString())
+    .set('pageSize', pageSize.toString());
+
+  return this.http.get<any>(`https://localhost:7009/api/Orders`, { params });
+}
+
+
+
   addOrder(order: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, order);
+    return this.http.post<any>(`${this.apiUrl}/${order.id}`, order);
   }
 
-  // Cập nhật đơn hàng
+
   updateOrder(order: any): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/${order.id}`, order);
   }
 
-  // Xóa đơn hàng
+
   deleteOrder(orderId: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/${orderId}`);
   }
-
-
 }
