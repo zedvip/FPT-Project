@@ -60,6 +60,7 @@ public class OrdersController : ControllerBase
         }
 
         var updatedOrder = await _service.UpdateOrderAsync(id, order);
+
         if (updatedOrder == null)
         {
             return NotFound();
