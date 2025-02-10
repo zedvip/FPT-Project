@@ -1,5 +1,8 @@
-<div class="container mt-4 bg-light p-4 rounded">
+    <h1 class="text-center fw-bold">Order List</h1>
+    <hr class="mb-4" />
 
+
+<div class="container mt-4 bg-light p-4 rounded">
   <!--Search-->
   <div class="input-group mb-4">
     <input type="text" class="form-control" placeholder="Search Order ID, CustomerName, PhoneNumber"
@@ -8,8 +11,7 @@
       <i class="bi bi-search"></i> Search
     </button>
     <button class="btn btn-success ms-2" (click)="moveToAddOrder()">
-      <i class="bi bi-plus-circle"></i> Add order
-    </button>
+      <i class="bi bi-plus-circle"></i> Add order </button>
   </div>
 
   <!-- List -->
@@ -30,8 +32,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let order of paginatedOrders">
-          <td class="text-center">{{ order.id }}</td>
+        <tr *ngFor="let order of paginatedOrders; let i = index">
+          <!-- Hiển thị thứ tự tự động thay vì giá trị thật của order.id -->
+          <td class="text-center">{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
           <td>{{ order.orderDate ? (order.orderDate | date: 'dd/MM/yyyy') : 'N/A' }}</td>
           <td>{{ order.customerName }}</td>
           <td>{{ order.phoneNumber }}</td>
@@ -46,9 +49,9 @@
             <button class="btn btn-sm btn-danger" (click)="deleteOrder(order.id)" title="Xóa" aria-label="Xóa đơn hàng">
               <i class="bi bi-trash-fill"></i>
             </button>
-
           </td>
         </tr>
+
         <tr *ngIf="paginatedOrders.length === 0">
           <td colspan="9" class="text-center text-muted py-3">
             Không có đơn hàng nào.

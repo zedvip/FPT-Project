@@ -4,6 +4,8 @@ using WebApiWithPostgres.Services;
 
 namespace WebApiWithPostgres.Controllers;
 
+
+
 [Route("api/[controller]")]
 [ApiController]
 public class OrdersController : ControllerBase
@@ -17,7 +19,7 @@ public class OrdersController : ControllerBase
 
     // GET: api/orders
     [HttpGet]
-    public async Task<IActionResult> GetOrders(int page , int pageSize,string? searchText )
+    public async Task<IActionResult> GetOrders(int page, int pageSize, string? searchText)
     {
         // Kiểm tra tham số đầu vào
         if (page <= 0 || pageSize <= 0)
@@ -26,7 +28,9 @@ public class OrdersController : ControllerBase
         }
 
         // Lấy dữ liệu phân trang
-        var paginatedOrders = await _service.GetOrdersPaginatedAsync(page, pageSize,searchText);
+        var paginatedOrders = await _service.GetOrdersPaginatedAsync(page, pageSize, searchText);
+
+      
 
         // Trả về kết quả
         return Ok(new
@@ -37,8 +41,8 @@ public class OrdersController : ControllerBase
             paginatedOrders.TotalItems,
             paginatedOrders.TotalPages
         });
-
     }
+
 
     // GET: api/orders/{id}
     [HttpGet("{id}")]

@@ -1,8 +1,50 @@
 .container {
-  max-width: 600px;
-  margin: auto;
+  max-width: 1200px; /* Đặt chiều rộng tối đa của container */
+  margin: 0 auto; /* Căn giữa container */
+  padding: 20px;
+}
+
+.form-wrapper {
+  max-width: 600px; /* Đặt chiều rộng tối đa cho form */
+  background-color: #f9f9f9; /* Màu nền nhạt */
+  padding: 30px; /* Khoảng cách bên trong */
+  border-radius: 10px; /* Bo góc */
+  border: 1px solid #ddd; /* Viền nhẹ */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+}
+
+input {
+  width: 100%; /* Đặt chiều rộng của input */
+  padding: 10px; /* Khoảng cách bên trong input */
+  border: 1px solid #ccc; /* Viền input */
+  border-radius: 5px; /* Bo góc cho input */
+  font-size: 16px; /* Phông chữ lớn hơn */
+}
+
+label {
+  font-weight: bold; /* Làm nổi bật nhãn */
+  margin-bottom: 5px; /* Khoảng cách giữa nhãn và input */
 }
 
 button {
-  margin-right: 10px;
+  padding: 10px 20px; /* Kích thước nút lớn hơn */
+  font-size: 16px; /* Phông chữ lớn */
+  margin-right: 5px; /* Khoảng cách giữa các nút */
+  border-radius: 5px; /* Bo góc cho nút */
+}
+
+button:hover {
+  opacity: 0.9; /* Hiệu ứng hover cho nút */
+}
+
+h1{
+  font-family: 'Georgia', serif;
+
+  color: #000080;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  text-shadow: 1px 1px #cccccc;
 }

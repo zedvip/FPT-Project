@@ -1,84 +1,94 @@
+<h1 class="text-center fw-bold">Add Order</h1>
+<hr class="mb-4" />
+
 <div class="container mt-4">
-  <h2>Thêm Đơn Hàng</h2>
-  <form (ngSubmit)="addOrder()" class="form-group">
-    <div class="mb-3">
-      <label for="customerName" class="form-label">Tên Khách Hàng</label>
-      <input
-        id="customerName"
-        type="text"
-        class="form-control"
-        [(ngModel)]="newOrder.customerName"
-        name="customerName"
-        required
-      />
-    </div>
+  <div class="form-wrapper mx-auto">
+    <form (ngSubmit)="addOrder()" class="form-group">
+      <div class="mb-3">
+        <label for="customerName" class="form-label">Customer Name</label>
+        <input
+          id="customerName"
+          type="text"
+          class="form-control"
+          [(ngModel)]="newOrder.customerName"
+          name="customerName"
+          required
+        />
+      </div>
 
-    <div class="mb-3">
-      <label for="phoneNumber" class="form-label">Số Điện Thoại</label>
-      <input
-        id="phoneNumber"
-        type="text"
-        class="form-control"
-        [(ngModel)]="newOrder.phoneNumber"
-        name="phoneNumber"
-        required
-      />
-    </div>
+      <div class="mb-3">
+        <label for="phoneNumber" class="form-label">Phone Number</label>
+        <input
+          id="phoneNumber"
+          type="text"
+          class="form-control"
+          [(ngModel)]="newOrder.phoneNumber"
+          name="phoneNumber"
+          required
+        />
+      </div>
 
-    <div class="mb-3">
-      <label for="productName" class="form-label">Tên Sản Phẩm</label>
-      <input
-        id="productName"
-        type="text"
-        class="form-control"
-        [(ngModel)]="newOrder.productName"
-        name="productName"
-        required
-      />
-    </div>
+      <div class="mb-3">
+        <label for="productName" class="form-label">Product Name</label>
+        <input
+          id="productName"
+          type="text"
+          class="form-control"
+          [(ngModel)]="newOrder.productName"
+          name="productName"
+          required
+        />
+      </div>
 
-    <div class="mb-3">
-      <label for="quantity" class="form-label">Số Lượng</label>
-      <input
-        id="quantity"
-        type="number"
-        class="form-control"
-        [(ngModel)]="newOrder.quantity"
-        name="quantity"
-        (input)="calculateTotal()"
-        min="1"
-        required
-      />
-    </div>
+      <div class="mb-3">
+        <label for="quantity" class="form-label">Quantity</label>
+        <input
+          id="quantity"
+          type="number"
+          class="form-control"
+          [(ngModel)]="newOrder.quantity"
+          name="quantity"
+          (input)="calculateTotal()"
+          min="1"
+          required
+        />
+      </div>
 
-    <div class="mb-3">
-      <label for="price" class="form-label">Giá</label>
-      <input
-        id="price"
-        type="number"
-        class="form-control"
-        [(ngModel)]="newOrder.price"
-        name="price"
-        (input)="calculateTotal()"
-        min="1"
-        required
-      />
-    </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input
+          id="price"
+          type="number"
+          class="form-control"
+          [(ngModel)]="newOrder.price"
+          name="price"
+          (input)="calculateTotal()"
+          min="1"
+          required
+        />
+      </div>
 
-    <div class="mb-3">
-      <label class="form-label">Tổng Cộng</label>
-      <input
-        type="text"
-        class="form-control"
-        [value]="newOrder.total | currency: 'VND'"
-        readonly
-      />
-    </div>
+      <div class="mb-3">
+        <label class="form-label">Total</label>
+        <input
+          type="text"
+          class="form-control"
+          [value]="newOrder.total | currency: 'VND'"
+          readonly
+        />
+      </div>
 
-
-
-    <button type="submit" class="btn btn-primary">Thêm</button>
-    <button type="button" class="btn btn-secondary" (click)="resetForm()">Reset</button>
-    <button  type="button" class="btn btn-dark"(click)="moveToOrderList()" >Go to Order List</button> <!-- Button để chuyển qua order-list -->
-  </form>
+      <button type="submit" class="btn btn-primary">Thêm</button>
+      <button type="button" class="btn btn-secondary" (click)="resetForm()">
+        Reset
+      </button>
+      <button
+        type="button"
+        class="btn btn-dark"
+        (click)="moveToOrderList()"
+      >
+        Go to Order List
+      </button>
+    </form>
+  </div>
 </div>

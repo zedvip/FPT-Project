@@ -17,9 +17,11 @@ public class OrderService : IOrderService
         return _repository.GetOrdersAsync();
     }
 
-   public Task<PaginatedList<Order>> GetOrdersPaginatedAsync(int page, int pageSize,string? searchText)
+   public async Task<PaginatedList<Order>> GetOrdersPaginatedAsync(int page, int pageSize,string? searchText)
 {
-    return _repository.GetOrdersPaginatedAsync(page, pageSize,searchText);
+        var ordersList = await _repository.GetOrdersPaginatedAsync(page, pageSize, searchText);
+        ordersList.Items = ordersList.Items.OrderBy(x => x.Id).ToList();
+        return ordersList;
 }
 
 
