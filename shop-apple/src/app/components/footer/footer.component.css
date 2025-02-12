@@ -1,0 +1,24 @@
+footer {
+  width: 100%;
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 8px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+
+.footer-logo {
+  width: 60px; /* Thu nhỏ logo */
+}
+
+.social-icons a {
+  font-size: 14px; /* Giảm kích thước icon mạng xã hội */
+  margin: 0 5px; /* Giảm khoảng cách giữa các icon */
+}
+
+p {
+  margin: 5px 0; /* Giảm khoảng cách của dòng chữ bản quyền */
+}

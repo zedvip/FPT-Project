@@ -1,0 +1,18 @@
+<div class="container mt-5">
+  <h2>Login</h2>
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <form (submit)="login(); $event.preventDefault()" name="form1">
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" id="username" [(ngModel)]="username" name="input1" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" id="password" name="input2" [(ngModel)]="password" class="form-control" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+</div>

@@ -1,0 +1,57 @@
+.navbar {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Điều chỉnh vùng chứa tìm kiếm và giỏ hàng */
+.search-cart-container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Khoảng cách giữa tìm kiếm và giỏ hàng */
+}
+
+/* Thanh tìm kiếm và nút tìm kiếm */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative; /* Để đảm bảo kết quả tìm kiếm hiển thị đúng */
+}
+
+/* Input tìm kiếm */
+.search-bar {
+  width: 250px;
+  max-width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Nút search */
+.search-btn {
+  height: 38px; /* Cùng chiều cao với input */
+}
+
+/* Hiển thị kết quả tìm kiếm */
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 300px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Nút giỏ hàng */
+.cart {
+  margin-left: 10px;
+}
+
+.logo {
+  height: 80px;
+}
