@@ -24,20 +24,23 @@ namespace WebApiWithPostgres
             // Dependency Injection
             builder.Services.AddScoped<IOrderRepository, OrderRepository>();
             builder.Services.AddScoped<IOrderService, OrderService>();
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<IProductService, ProductService>();
+
 
             // Configure CORS to allow requests from the Angular app
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowAngularApp", policy =>
                 {
-                    policy.WithOrigins("http://localhost:4200") // Replace with your frontend URL if different
+                    policy.WithOrigins("*") // Replace with your frontend URL if different
                           .AllowAnyHeader()
                           .AllowAnyMethod();
                 });
             });
 
             var app = builder.Build();
-
+            app.UseCors("AllowAll");
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {

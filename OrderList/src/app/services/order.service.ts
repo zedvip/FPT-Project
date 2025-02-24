@@ -33,12 +33,13 @@ export class OrderService {
   }
 
   addOrder(order: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/${order.id}`, order);
+    return this.http.post<any>(`${this.apiUrl}`, order);
   }
 
   updateOrder(order: any): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/${order.id}`, order);
   }
+
 
   deleteOrder(orderId: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/${orderId}`);

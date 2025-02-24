@@ -1,0 +1,245 @@
+/* Toàn bộ trang */
+.main {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #b4bec8;
+  min-height: 100vh
+}
+
+/* Header */
+.header {
+  height: 100px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.appname {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Thanh tìm kiếm */
+.searchbox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+
+}
+
+.searchinput {
+  flex: 1;
+  border-radius: 6px;
+  border: 1px solid gray;
+  outline: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  width: 250px;
+  transition: all 0.3s ease-in-out;
+}
+
+.searchinput:focus {
+  border-color: #59bb45;
+  box-shadow: 0 0 5px rgba(89, 187, 69, 0.5);
+}
+
+.searchbutton {
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 6px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.searchbutton:hover {
+  background-color: #59bb45;
+}
+
+/* Danh sách sản phẩm */
+.body {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+
+}
+
+.product {
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  width: 180px;
+  height: 350px; /* Giữ chiều cao cố định cho hộp sản phẩm */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  width: 100%;
+  height: 150px; /* Giữ chiều cao cố định */
+  object-fit: cover; /* Đảm bảo ảnh luôn lấp đầy khung mà không méo */
+  border-bottom: 1px solid gray;
+  display: block;
+}
+
+
+
+
+.product-info {
+  margin-top: 10px;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.product-price {
+  font-size: 16px;
+  color: #e63946;
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  height: 60px;
+  background-color: #222;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  position: relative; /* Hoặc dùng fixed nếu cần */
+  bottom: 0;
+  width: 100%;
+
+}
+
+/* phan trang */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1px;
+  gap: 5px;
+
+}
+
+.pagination button {
+  border: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.pagination .active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.pagination button:not(.active):hover {
+  background-color: #ddd;
+}
+
+@media (max-width: 768px) {
+  .body {
+    flex-direction: row; /* Xếp dọc khi thu nhỏ */
+  }
+}
+
+.appname {
+  text-align: center; /* Căn giữa tiêu đề */
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 10px; /* Khoảng cách từ trên xuống */
+  white-space: nowrap; /* Giữ nguyên trên một dòng, không xuống dòng */
+  overflow: hidden; /* Tránh tràn */
+  text-overflow: ellipsis; /* Hiển thị dấu "..." nếu bị tràn */
+}
+
+@media (max-width: 768px) {
+  .appname {
+    font-size: 22px; /* Giảm kích thước chữ trên màn hình nhỏ */
+  }
+}
+
+
+
+.cartbutton {
+  background-color: #96ce09; /* Màu xanh lá */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 1px; /* Khoảng cách giữa icon và chữ */
+}
+
+
+.cartbutton:hover {
+  background-color: #218838; /* Màu xanh đậm hơn khi hover */
+  transform: scale(1.05);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.add-to-cart {
+  background-color: #28a745; /* Màu xanh lá */
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 10px;
+  border: none;
+  border-radius:15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Để căn ngang */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+  margin-top: 10px;
+}
+
+.add-to-cart:hover {
+  background-color: #218838; /* Màu xanh đậm hơn khi hover */
+  transform: scale(1.05);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.add-to-cart:active {
+  transform: scale(0.9);
+}

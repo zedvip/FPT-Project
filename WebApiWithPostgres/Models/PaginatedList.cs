@@ -30,7 +30,7 @@ namespace WebApiWithPostgres.Models
             // Lấy dữ liệu phân trang
             var items = await source
                 .Skip((page - 1) * pageSize)
-                .Take(pageSize)
+                .Take(pageSize)                
                 .ToListAsync();
 
             return new PaginatedList<T>(items, count, page, pageSize,searchText);

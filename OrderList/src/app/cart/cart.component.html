@@ -1,0 +1,33 @@
+<div class="cart-container">
+  <h2 class="cart-title">🛒 CART</h2>
+  <hr class="mb-4" />
+
+  <div *ngIf="cartItems.length > 0; else emptyCart">
+      <div *ngFor="let item of cartItems" class="cart-item">
+        <div class="cart-item-products">
+          <img [src]="item.image" alt="Product Image" class="cart-item-image">
+          <p class="cart-item-name">{{ item.name }}</p>
+        </div>
+          <div class="cart-item-info">
+
+              <p class="cart-item-price">{{ item.price }}$ x {{ item.quantity }}</p>
+
+              <div class="quantity-controls">
+                  <button class="btn btn-primary" (click)="decreaseQuantity(item.id)">➖</button>
+                  <span>{{ item.quantity }}</span>
+                  <button class="btn btn-success" (click)="increaseQuantity(item)">➕</button>
+              </div>
+
+              <button class="btn btn-delete" (click)="removeItem(item.id)">❌ Xóa</button>
+          </div>
+      </div>
+
+      <div class="cart-buttons">
+          <button class="btn btn-clear" (click)="clearCart()">🗑 Xóa tất cả</button>
+      </div>
+  </div>
+
+  <ng-template #emptyCart>
+      <p class="empty-cart">Giỏ hàng trống.</p>
+  </ng-template>
+</div>

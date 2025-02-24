@@ -1,73 +1,95 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-  <div class="container">
-    <!-- Logo -->
-    <a class="navbar-brand fw-bold" href="/">
-      <img src="/assets/image/banner.jpg" alt="THIENVU-APPLE" class="logo">
+<nav class="navbar navbar-expand-lg custom-navbar shadow-sm">
+  <div class="container d-flex align-items-center justify-content-between">
+    <!-- Logo + Tên -->
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <img src="/assets/image/banner.jpg" alt="THIENVU-APPLE" class="logo rounded-circle me-2" width="50" height="50">
+      <span class="site-title fw-bold fs-4">THIENVU-APPLE</span>
     </a>
 
-    <!-- Mobile Menu Button -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <!-- Search and Results Container -->
+    <div class="search-container position-relative w-50">
+      <!-- Search Form -->
+      <form class="d-flex search-form">
+        <input class="form-control me-2 shadow-sm" type="search" [(ngModel)]="searchText" name="searchQuery"
+          placeholder="Tìm kiếm sản phẩm..." (input)="onSearch()" />
+        <button class="btn btn-primary" type="button" (click)="onSearch()">
+          <i class="bi bi-search"></i>
+        </button>
+      </form>
+
+      <!-- Hiển thị kết quả tìm kiếm -->
+      <div *ngIf="filteredProducts.length > 0" class="search-results position-absolute bg-white shadow-lg rounded p-2 w-100 mt-2">
+        <ul class="list-group">
+          <li *ngFor="let product of filteredProducts" class="list-group-item d-flex justify-content-between align-items-center">
+            <span>{{ product.ProductName }} - <strong class="text-success">{{ product.Price }}</strong></span>
+            <button class="btn btn-sm btn-success" (click)="addToCart(product)">
+              <i class="bi bi-cart-plus"></i> Thêm
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Hiển thị thông báo nếu không có kết quả -->
+      <div *ngIf="showNoResultsMessage" class="alert alert-warning mt-2 p-2 text-center">
+        Không tìm được sản phẩm nào.
+      </div>
+    </div>
+  </div>
+
+  <!-- Shopping Cart -->
+  <div class="cart">
+    <button class="btn btn-warning position-relative" routerLink="/card">
+      🛒 Cart
+      <span *ngIf="cartItemCount > 0"
+        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        {{ cartItemCount }}
+      </span>
+    </button>
+  </div>
+
+  <!-- Login/Logout Section -->
+  <div class="d-flex align-items-center ms-3">
+    <button *ngIf="!isUserLoggedIn" class="btn btn-success" (click)="goToLogin()">Login</button>
+    <button *ngIf="isUserLoggedIn" class="btn btn-danger" (click)="logout()">
+      <i class="bi bi-box-arrow-right"></i> Logout
+    </button>
+  </div>
+</nav>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+  <div class="container"  >
+    <!-- Nút Toggle cho mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bottomNavbar" aria-controls="bottomNavbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <!-- Navigation Menu -->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-      <ul class="navbar-nav">
+    <!-- Nội dung navbar -->
+    <div class="collapse navbar-collapse" id="bottomNavbar">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
+        <!-- Trang chủ -->
         <li class="nav-item">
-          <a class="nav-link active fw-semibold text-primary" routerLink="/">Home</a>
+          <a class="nav-link" href="#">Trang chủ</a>
         </li>
+        <!-- Sản phẩm -->
         <li class="nav-item">
-          <a class="nav-link fw-semibold" routerLink="/products">Products</a>
+          <a class="nav-link" href="#">Sản phẩm</a>
         </li>
+        <!-- Dropdown cho Danh mục -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="danhMucDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Danh mục
+          </a>
+          <ul class="dropdown-menu text-center" aria-labelledby="danhMucDropdown">
+            <li><a class="dropdown-item" href="#">iPhone</a></li>
+            <li><a class="dropdown-item" href="#">MacBook</a></li>
+            <li><a class="dropdown-item" href="#">Apple Watch</a></li>
+          </ul>
+        </li>
+        <!-- Liên hệ -->
         <li class="nav-item">
-          <a class="nav-link fw-semibold" routerLink="/about">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fw-semibold" routerLink="/contact">Contact</a>
-        </li>
-        <li class="nav-item" *ngIf="!isUserLoggedIn">
-          <a class="nav-link login-link fw-semibold" (click)="goToLogin()">Login</a>
-        </li>
-        <li class="nav-item" *ngIf="isUserLoggedIn">
-          <button class="logout-btn" (click)="logout()">Logout</button>
+          <a class="nav-link" href="#">Liên hệ</a>
         </li>
       </ul>
-    </div>
-
-<div>
-   <!-- Search and Results Container -->
-<div class="d-flex align-items-start search-container">
-  <!-- Search Form -->
-  <form class="d-flex search-form">
-    <input class="search form-control me-2" type="search" [(ngModel)]="searchText" name="searchQuery"
-      placeholder="Search..." (input)="onSearch()" />
-    <button class="btn btn-outline-success" type="button" (click)="onSearch()">Search</button>
-  </form>
-
-  <!-- Hiển thị kết quả tìm kiếm -->
-  <div *ngIf="filteredProducts.length > 0" class="search-results ms-3">
-    <ul class="list-group">
-      <li *ngFor="let product of filteredProducts" class="list-group-item">
-        {{ product.ProductName }} - Price: {{ product.Price }}
-        <button class="btn btn-sm btn-success ms-2" (click)="addToCart(product)"> Add to Cart </button>
-      </li>
-    </ul>
-  </div>
-</div>
-<!-- Hiển thị thông báo nếu không có kết quả -->
-<div *ngIf="showNoResultsMessage" class="mt-3">
-  <p class="text-muted">Không tìm được sản phẩm nào.</p>
-</div>
-</div>
-<!-- Shopping Cart -->
-    <div class="cart">
-      <button class="btn btn-outline-primary position-relative" routerLink="/card "> 🛒 Cart
-
-        <span *ngIf="cartItemCount > 0"
-          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-          {{cartItemCount}}
-        </span>
-      </button>
     </div>
   </div>
 </nav>

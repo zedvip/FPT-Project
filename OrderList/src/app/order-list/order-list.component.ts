@@ -15,7 +15,6 @@ export class OrderListComponent implements OnInit {
   searchText: string = '';
   ordersList: any[] = [];
   orders: any[] = [];
-
   selectedOrder: any = null;
   loading: boolean = false;
 
@@ -30,6 +29,8 @@ export class OrderListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getOrderData();
+
+    document.title = 'Trang quan tri';
   }
 
   getOrderData() {
@@ -85,28 +86,41 @@ export class OrderListComponent implements OnInit {
   }
 
   editOrder(order: any) {
+    if (!order) {
+      console.error('Lỗi: Đơn hàng không tồn tại.');
+      return;
+    }
+    console.log('Đang chỉnh sửa đơn hàng:', order);
     this.selectedOrder = { ...order };
   }
 
   saveOrder() {
-    if (
-      !this.selectedOrder.customerName ||
-      !this.selectedOrder.phoneNumber ||
-      !this.selectedOrder.productName ||
-      this.selectedOrder.quantity <= 0 ||
-      this.selectedOrder.price <= 0
-    ) {
-      alert('Vui lòng điền đầy đủ thông tin!');
+    if (!this.selectedOrder || !this.selectedOrder.id) {
+      console.error(
+        'Lỗi: Không có đơn hàng hợp lệ để cập nhật.',
+        this.selectedOrder
+      );
       return;
     }
 
     this.orderService.updateOrder(this.selectedOrder).subscribe(
-      () => {
-        this.getOrderData();
+      (updatedOrder) => {
+        console.log('Đơn hàng sau khi cập nhật:', updatedOrder);
+
+        let index = this.ordersList.findIndex((o) => o.id === updatedOrder.id);
+        if (index !== -1) {
+          this.ordersList[index] = { ...updatedOrder }; // Cập nhật danh sách hiển thị
+        } else {
+          console.warn(
+            'Không tìm thấy đơn hàng trong danh sách, có thể đã bị cập nhật từ API.'
+          );
+        }
+
+        this.paginatedOrders = this.ordersList.slice();
         this.selectedOrder = null; // Đóng form chỉnh sửa
       },
       (error) => {
-        console.error('Error updating order:', error);
+        console.error('Lỗi khi cập nhật đơn hàng:', error);
       }
     );
   }

@@ -1,0 +1,53 @@
+<div class="main">
+  <div class="header">
+    <p class="appname">Thien mat lon - Vinh mat cac</p>
+
+    <div class="searchbox">
+      <input class="searchinput" type="text" placeholder="Search product or phone"
+             [(ngModel)]="searchQuery" (input)="updateFilteredProducts()">
+      <button class="searchbutton">
+        <img src="/search-icon.PNG" alt="Search" width="25" height="25">
+      </button>
+
+    <button class="cartbutton btn btn-success ms-2"
+      (click)="moveToCart()"> 🛒 Cart
+    </button>
+  </div>
+</div>
+
+  <div class="body">
+    <div class="product" *ngFor="let product of paginatedProducts">
+      <img [src]="product.image" alt="Product Image" class="product-image">
+      <div class="product-info">
+        <div class="product-name">{{ product.name }}</div>
+        <div class="product-price">{{ product.price }}</div>
+        <div class="product-phone">☎ {{ product.phone }}</div>
+        <div> <button class="add-to-cart" (click)="addToCart(product)">Thêm vào giỏ hàng</button></div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Phân trang -->
+  <nav>
+    <ul class="pagination justify-content-center">
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <button class="page-link" (click)="goToPage(currentPage - 1)">«</button>
+      </li>
+
+      <li *ngFor="let page of getPages()" class="page-item" [class.active]="page === currentPage">
+        <button class="page-link" (click)="goToPage(page)">{{ page }}</button>
+      </li>
+
+      <li class="page-item" [class.disabled]="currentPage === totalPages">
+        <button class="page-link" (click)="goToPage(currentPage + 1)">»</button>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="footer">
+    © 2025 - Shop Apple. All rights reserved.
+  </div>
+
+</div>

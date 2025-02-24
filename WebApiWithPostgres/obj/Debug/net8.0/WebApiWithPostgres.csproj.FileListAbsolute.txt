@@ -269,10 +269,10 @@ C:\Users\DELL\Desktop\gitFPT\WebApiWithPostgres\obj\Debug\net8.0\staticwebassets
 C:\Users\DELL\Desktop\gitFPT\WebApiWithPostgres\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WebApiWithPostgres.props
 C:\Users\DELL\Desktop\gitFPT\WebApiWithPostgres\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebApiWithPostgres.props
 C:\Users\DELL\Desktop\gitFPT\WebApiWithPostgres\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\DELL\Desktop\gitFPT\WebApiWithPostgres\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\DELL\Desktop\gitFPT\WebApiWithPostgres\obj\Debug\net8.0\WebApiWi.4EAE898E.Up2Date
 C:\Users\DELL\Desktop\gitFPT\WebApiWithPostgres\obj\Debug\net8.0\WebApiWithPostgres.dll
 C:\Users\DELL\Desktop\gitFPT\WebApiWithPostgres\obj\Debug\net8.0\refint\WebApiWithPostgres.dll
 C:\Users\DELL\Desktop\gitFPT\WebApiWithPostgres\obj\Debug\net8.0\WebApiWithPostgres.pdb
 C:\Users\DELL\Desktop\gitFPT\WebApiWithPostgres\obj\Debug\net8.0\WebApiWithPostgres.genruntimeconfig.cache
 C:\Users\DELL\Desktop\gitFPT\WebApiWithPostgres\obj\Debug\net8.0\ref\WebApiWithPostgres.dll
+C:\Users\DELL\Desktop\gitFPT\WebApiWithPostgres\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

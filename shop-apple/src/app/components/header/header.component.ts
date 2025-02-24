@@ -17,9 +17,9 @@ export class HeaderComponent {
   isUserLoggedIn: boolean = false;
 
   productList: any[] = [
-    { OrderID: 1, ProductName: 'Iphone13', Price: 100 },
-    { OrderID: 2, ProductName: 'Iphone14', Price: 200 },
-    { OrderID: 3, ProductName: 'Iphone15', Price: 300 },
+    { OrderID: 1, ProductName: 'Iphone13', Price: "100$" },
+    { OrderID: 2, ProductName: 'Iphone14', Price: "200$" },
+    { OrderID: 3, ProductName: 'Iphone15', Price: "300$" },
   ];
 
   constructor(private router: Router) {}
