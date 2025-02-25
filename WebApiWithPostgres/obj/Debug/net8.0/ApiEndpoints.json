@@ -1,8 +1,60 @@
 [
   {
-    "ContainingType": "WebApiWithPostgres.Controllers.OrdersController",
+    "ContainingType": "WebApiWithPostgres.Controllers.OrderController",
     "Method": "GetOrders",
-    "RelativePath": "api/Orders",
+    "RelativePath": "api/orders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiWithPostgres.Controllers.OrderController",
+    "Method": "CreateOrder",
+    "RelativePath": "api/orders",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "order",
+        "Type": "WebApiWithPostgres.Models.Order",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiWithPostgres.Controllers.OrderController",
+    "Method": "DeleteOrder",
+    "RelativePath": "api/orders/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiWithPostgres.Controllers.OrderController",
+    "Method": "DeleteAllOrders",
+    "RelativePath": "api/orders/deleteAll",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiWithPostgres.Controllers.OrdersListController",
+    "Method": "GetOrders",
+    "RelativePath": "api/OrdersList",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -26,25 +78,25 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebApiWithPostgres.Controllers.OrdersController",
+    "ContainingType": "WebApiWithPostgres.Controllers.OrdersListController",
     "Method": "CreateOrder",
-    "RelativePath": "api/Orders",
+    "RelativePath": "api/OrdersList",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "order",
-        "Type": "WebApiWithPostgres.Models.Order",
+        "Type": "WebApiWithPostgres.Models.OrderList",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebApiWithPostgres.Controllers.OrdersController",
+    "ContainingType": "WebApiWithPostgres.Controllers.OrdersListController",
     "Method": "GetOrderById",
-    "RelativePath": "api/Orders/{id}",
+    "RelativePath": "api/OrdersList/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -58,9 +110,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebApiWithPostgres.Controllers.OrdersController",
+    "ContainingType": "WebApiWithPostgres.Controllers.OrdersListController",
     "Method": "UpdateOrder",
-    "RelativePath": "api/Orders/{id}",
+    "RelativePath": "api/OrdersList/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -72,16 +124,16 @@
       },
       {
         "Name": "order",
-        "Type": "WebApiWithPostgres.Models.Order",
+        "Type": "WebApiWithPostgres.Models.OrderList",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebApiWithPostgres.Controllers.OrdersController",
+    "ContainingType": "WebApiWithPostgres.Controllers.OrdersListController",
     "Method": "DeleteOrder",
-    "RelativePath": "api/Orders/{id}",
+    "RelativePath": "api/OrdersList/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -95,17 +147,28 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebApiWithPostgres.Controllers.ProductController",
-    "Method": "GetAllProducts",
+    "ContainingType": "ProductController",
+    "Method": "GetProducts",
     "RelativePath": "api/products",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebApiWithPostgres.Controllers.ProductController",
+    "ContainingType": "ProductController",
     "Method": "AddProduct",
     "RelativePath": "api/products",
     "HttpMethod": "POST",
@@ -114,51 +177,14 @@
     "Parameters": [
       {
         "Name": "product",
-        "Type": "Product",
+        "Type": "WebApiWithPostgres.Models.Product",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebApiWithPostgres.Controllers.ProductController",
-    "Method": "GetProductById",
-    "RelativePath": "api/products/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebApiWithPostgres.Controllers.ProductController",
-    "Method": "UpdateProduct",
-    "RelativePath": "api/products/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "product",
-        "Type": "Product",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebApiWithPostgres.Controllers.ProductController",
+    "ContainingType": "ProductController",
     "Method": "DeleteProduct",
     "RelativePath": "api/products/{id}",
     "HttpMethod": "DELETE",

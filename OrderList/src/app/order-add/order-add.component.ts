@@ -88,7 +88,7 @@ export class AddOrderComponent {
   }
 
   moveToOrderList() {
-    this.router.navigate(['order-list']);
+    this.router.navigate(['admin']);
   }
 
   editOrder(order: any) {

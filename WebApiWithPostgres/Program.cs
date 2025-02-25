@@ -22,10 +22,9 @@ namespace WebApiWithPostgres
                 options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // Dependency Injection
-            builder.Services.AddScoped<IOrderRepository, OrderRepository>();
-            builder.Services.AddScoped<IOrderService, OrderService>();
-            builder.Services.AddScoped<IProductRepository, ProductRepository>();
-            builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<IOrderListRepository, OrderListRepository>();
+            builder.Services.AddScoped<IOrderListService, OrderListService>();
+   
 
 
             // Configure CORS to allow requests from the Angular app

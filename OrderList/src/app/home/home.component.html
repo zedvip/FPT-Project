@@ -1,6 +1,6 @@
 <div class="main">
   <div class="header">
-    <p class="appname">Thien mat lon - Vinh mat cac</p>
+    <p class="appname">Apple-Shop</p>
 
     <div class="searchbox">
       <input class="searchinput" type="text" placeholder="Search product or phone"
@@ -20,8 +20,7 @@
       <img [src]="product.image" alt="Product Image" class="product-image">
       <div class="product-info">
         <div class="product-name">{{ product.name }}</div>
-        <div class="product-price">{{ product.price }}</div>
-        <div class="product-phone">☎ {{ product.phone }}</div>
+        <div class="product-price">{{ product.price | currency:'USD' }}</div>
         <div> <button class="add-to-cart" (click)="addToCart(product)">Thêm vào giỏ hàng</button></div>
       </div>
     </div>

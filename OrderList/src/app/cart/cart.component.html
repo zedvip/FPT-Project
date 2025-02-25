@@ -27,6 +27,20 @@
       </div>
   </div>
 
+  <div class="order-form">
+    <h3>Thông tin đặt hàng</h3>
+    <label>Họ tên:</label>
+    <input type="text" [(ngModel)]="customerName" required>
+
+    <label>Địa chỉ:</label>
+    <input type="text" [(ngModel)]="customerAddress" required>
+
+    <label>Số điện thoại:</label>
+    <input type="text" [(ngModel)]="customerPhone" required>
+
+    <button class="btn btn-order" (click)="placeOrder()">🛒 Đặt hàng</button>
+  </div>
+
   <ng-template #emptyCart>
       <p class="empty-cart">Giỏ hàng trống.</p>
   </ng-template>

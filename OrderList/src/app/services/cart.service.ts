@@ -1,53 +1,63 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  cartKey = 'cart_items';
+  private apiUrl = 'https://localhost:7009/api/orders'; // Thay đổi thành URL API thực tế của bạn
+  private cartItems = new BehaviorSubject<any[]>([]); // Theo dõi giỏ hàng
+  cartItems$ = this.cartItems.asObservable();
 
-  constructor() {}
-
-  // Lấy giỏ hàng từ localStorage
-  getCart(): any[] {
-    const cart = localStorage.getItem(this.cartKey);
-    return cart ? JSON.parse(cart) : [];
+  constructor(private http: HttpClient) {
+    this.loadCart(); // Tải giỏ hàng từ API khi service khởi tạo
   }
 
-//  addcart
- addToCart(product: any) {
-  let cart = this.getCart() ?? [];
-  const index = cart.findIndex((item) => item.id === product.id);
-
-  if (index !== -1) {
-    cart[index] = { ...cart[index], quantity: cart[index].quantity + 1 };
-  } else {
-    cart.push({ ...product, quantity: 1 });
+  // Tải giỏ hàng từ API
+  loadCart() {
+    this.http.get<any[]>(`${this.apiUrl}`).subscribe((orders) => {
+      this.cartItems.next(orders);
+    });
   }
 
-  localStorage.setItem(this.cartKey, JSON.stringify(cart));
-}
+  // Thêm sản phẩm vào giỏ hàng (Gửi request lên API)
+  addToCart(product: any) {
+    let order = { items: [{ ...product, quantity: 1 }] };
+    this.http.post(`${this.apiUrl}`, order).subscribe(() => {
+      this.loadCart();
+    });
+  }
 
-// removeCart
-removeFromCart(productId: number) {
-  let cart = this.getCart();
+  // Xóa sản phẩm khỏi giỏ hàng
+  removeFromCart(productId: number) {
+    this.http.delete(`${this.apiUrl}/${productId}`).subscribe(() => {
+      this.loadCart();
+    });
+  }
 
-  const index = cart.findIndex((item) => item.id === productId);
+  // Cập nhật số lượng sản phẩm trong giỏ hàng
+  updateCart(productId: number, quantity: number) {
+    const updateData = { productId, quantity };
+    this.http.put(`${this.apiUrl}/update`, updateData).subscribe(() => {
+      this.loadCart();
+    });
+  }
 
-  if (index !== -1) {
-    if (cart[index].quantity > 1) {
-      cart[index].quantity -= 1; // Giảm số lượng đi 1
-    } else {
-      cart.splice(index, 1); // Nếu số lượng là 1, xóa sản phẩm khỏi giỏ hàng
+  clearCart() {
+    if (confirm("Bạn có chắc chắn muốn xóa toàn bộ giỏ hàng không?")) {
+      this.http.delete('https://localhost:7009/api/orders/deleteAll').subscribe({
+        next: () => {
+          console.log("Xóa thành công");
+          this.loadCart();
+        },
+        error: (err) => console.error("Lỗi khi xóa:", err),
+      });
     }
   }
 
-  localStorage.setItem(this.cartKey, JSON.stringify(cart));
-}
-
-
-  // Xóa toàn bộ giỏ hàng
-  clearCart() {
-    localStorage.removeItem(this.cartKey);
+  // Gửi đơn hàng lên API
+  saveOrder(order: any) {
+    return this.http.post(`${this.apiUrl}`, order);
   }
 }

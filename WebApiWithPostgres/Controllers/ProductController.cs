@@ -1,58 +1,55 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using WebApiWithPostgres.Models;
-using WebApiWithPostgres.Services;
+using System.Linq;
+using WebApiWithPostgres.Data;
+using WebApiWithPostgres.Models;
 
-namespace WebApiWithPostgres.Controllers
+[Route("api/products")]
+[ApiController]
+public class ProductController : ControllerBase
 {
-    [Route("api/products")]
-    [ApiController]
-    public class ProductController : ControllerBase
+    private readonly AppDbContext _context;
+    public ProductController(AppDbContext context)
     {
-        private readonly IProductService _productService;
-
-        public ProductController(IProductService productService)
-        {
-            _productService = productService;
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> GetAllProducts()
-        {
-            var products = await _productService.GetAllProducts();
-            return Ok(products);
-        }
-
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetProductById(int id)
-        {
-            var product = await _productService.GetProductById(id);
-            if (product == null) return NotFound();
-            return Ok(product);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> AddProduct([FromBody] Product product)
-        {
-            var newProduct = await _productService.AddProduct(product);
-            return CreatedAtAction(nameof(GetProductById), new { id = newProduct.Id }, newProduct);
-        }
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProduct(int id, [FromBody] Product product)
-        {
-            var updatedProduct = await _productService.UpdateProduct(id, product);
-            if (updatedProduct == null) return NotFound();
-            return Ok(updatedProduct);
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProduct(int id)
-        {
-            var success = await _productService.DeleteProduct(id);
-            if (!success) return NotFound();
-            return NoContent();
-        }
+        _context = context;
     }
+
+    [HttpGet]
+    public IActionResult GetProducts(int page = 1, int pageSize = 10)
+    {
+        var products = _context.Products
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+
+        return Ok(products);
+    }
+
+
+    [HttpPost]
+    public async Task<IActionResult> AddProduct([FromBody] Product product)
+    {
+        if (product == null) return BadRequest("Dữ liệu không hợp lệ");
+
+        _context.Products.Add(product);
+        await _context.SaveChangesAsync();
+
+        return Ok(product);
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeleteProduct(int id)
+    {
+        var product = _context.Products.Find(id);
+        if (product == null)
+        {
+            return NotFound("Sản phẩm không tồn tại!");
+        }
+
+        _context.Products.Remove(product);
+        _context.SaveChanges();
+        return Ok("Xóa thành công!");
+    }
+
+
 }

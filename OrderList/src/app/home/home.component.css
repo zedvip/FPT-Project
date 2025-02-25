@@ -2,8 +2,7 @@
 .main {
   display: flex;
   flex-direction: column;
-
-  background-color: #b4bec8;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTehQ15VY5GEnbL7pSJOlyQgCjxJskqv5_lbA&s);
   min-height: 100vh
 }
 
@@ -18,11 +17,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.appname {
-  color: white;
-  font-size: 30px;
-  font-weight: bold;
-}
+
 
 /* Thanh tìm kiếm */
 .searchbox {
@@ -82,7 +77,7 @@
   border-radius: 12px;
   padding: 12px;
   width: 180px;
-  height: 350px; /* Giữ chiều cao cố định cho hộp sản phẩm */
+  height: 300px; /* Giữ chiều cao cố định cho hộp sản phẩm */
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -105,8 +100,6 @@
   border-bottom: 1px solid gray;
   display: block;
 }
-
-
 
 
 .product-info {
@@ -176,6 +169,7 @@
 }
 
 .appname {
+  color: white;
   text-align: center; /* Căn giữa tiêu đề */
   font-size: 30px;
   font-weight: bold;
@@ -190,7 +184,6 @@
     font-size: 22px; /* Giảm kích thước chữ trên màn hình nhỏ */
   }
 }
-
 
 
 .cartbutton {

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class OrderService {
-  private apiUrl = 'https://localhost:7009/api/Orders';
+  private apiUrl = 'https://localhost:7009/api/OrdersList';
 
   constructor(private http: HttpClient) {}
 
@@ -29,7 +29,7 @@ export class OrderService {
       .set('page', page.toString())
       .set('pageSize', pageSize.toString());
 
-    return this.http.get<any>(`https://localhost:7009/api/Orders`, { params });
+    return this.http.get<any>(`https://localhost:7009/api/OrdersList`, { params });
   }
 
   addOrder(order: any): Observable<any> {
