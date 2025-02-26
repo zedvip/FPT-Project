@@ -1,0 +1,55 @@
+<div class="container">
+  <h1 class="admin-title">Admin - Product</h1>
+  <hr class="mb-4" />
+
+  <!-- Form thêm sản phẩm -->
+  <div class="add-product-form">
+    <h2>Thêm Sản Phẩm</h2>
+    <div class="input-group">
+      <input type="text" placeholder="Tên sản phẩm" [(ngModel)]="newProduct.name">
+    </div>
+    <div class="input-group">
+      <input type="number" placeholder="Giá sản phẩm" [(ngModel)]="newProduct.price">
+    </div>
+    <div class="input-group">
+      <input type="text" placeholder="Link hình ảnh" [(ngModel)]="newProduct.image">
+    </div>
+    <div class="input-group">
+      <input type="number" placeholder="Số lượng tồn kho" [(ngModel)]="newProduct.stock">
+    </div>
+    <button (click)="addProduct()">Thêm sản phẩm</button>
+  </div>
+  <hr class="mb-4" />
+  <!-- Danh sách sản phẩm -->
+  <h2>Danh sách sản phẩm</h2>
+  <div class="product-list">
+    <div class="product-card" *ngFor="let product of products">
+      <img [src]="product.image" alt="Product Image" class="product-image">
+      <hr class="mb-4" />
+
+      <div class="product-info">
+        <div class="product-name">{{ product.name }}</div>
+        <div class="product-price">{{ product.price }} $</div>
+        <div class="product-actions">
+          <button (click)="editProduct(product)" class="edit-btn">Sửa</button>
+          <button (click)="deleteProduct(product.id)" class="delete-btn">Xóa</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form sửa sản phẩm -->
+  <div class="edit-product-overlay" *ngIf="editingProduct">
+    <div class="edit-product-form">
+      <h2>Sửa Sản Phẩm</h2>
+      <input type="text" placeholder="Tên sản phẩm" [(ngModel)]="editingProduct.name">
+      <input type="number" placeholder="Giá sản phẩm" [(ngModel)]="editingProduct.price">
+      <input type="text" placeholder="Link hình ảnh" [(ngModel)]="editingProduct.image">
+      <input type="number" placeholder="Số lượng tồn kho" [(ngModel)]="editingProduct.stock">
+      <div class="edit-buttons">
+        <button (click)="updateProduct()">Lưu</button>
+        <button (click)="cancelEdit()">Hủy</button>
+      </div>
+    </div>
+  </div>
+</div>
