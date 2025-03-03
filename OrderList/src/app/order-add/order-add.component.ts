@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { OrderService } from '../services/order.service';
+import { OrderListService } from '../services/orderlist.service';
 
 @Component({
   selector: 'app-add-order',
@@ -19,7 +19,6 @@ export class AddOrderComponent {
     id: 0,
     OrderDate: new Date().toISOString(),
     customerName: '',
-    phoneNumber: '',
     productName: '',
     quantity: 1,
     price: 0,
@@ -34,7 +33,10 @@ export class AddOrderComponent {
   totalPages = 1;
   itemsPerPage = 5;
 
-  constructor(private router: Router, private orderAddService: OrderService) {}
+  constructor(
+    private router: Router,
+    private orderAddService: OrderListService
+  ) {}
 
   calculateTotal() {
     this.newOrder.total = this.newOrder.quantity * this.newOrder.price;
@@ -44,7 +46,6 @@ export class AddOrderComponent {
     this.newOrder.OrderDate = new Date().toISOString();
     if (
       this.newOrder.customerName.trim() &&
-      this.newOrder.phoneNumber.trim() &&
       this.newOrder.productName.trim() &&
       this.newOrder.quantity > 0 &&
       this.newOrder.price > 0
@@ -71,7 +72,6 @@ export class AddOrderComponent {
       id: 0,
       OrderDate: new Date().toISOString(),
       customerName: '',
-      phoneNumber: '',
       productName: '',
       quantity: 1,
       price: 0,
@@ -98,7 +98,9 @@ export class AddOrderComponent {
   saveOrder() {
     if (this.selectedOrder) {
       this.selectedOrder.date = new Date().toISOString();
-      const index = this.orders.findIndex(o => o.id === this.selectedOrder.id);
+      const index = this.orders.findIndex(
+        (o) => o.id === this.selectedOrder.id
+      );
       if (index !== -1) {
         this.orders[index] = { ...this.selectedOrder };
         this.updatePagination();
@@ -118,13 +120,19 @@ export class AddOrderComponent {
   }
 
   updatePagination() {
-    const filteredOrders = this.orders.filter(order =>
-      order.customerName.toLowerCase().includes(this.searchText.toLowerCase()) ||
-      order.phoneNumber.includes(this.searchText)
+    const filteredOrders = this.orders.filter(
+      (order) =>
+        order.customerName
+          .toLowerCase()
+          .includes(this.searchText.toLowerCase()) ||
+        order.phoneNumber.includes(this.searchText)
     );
     this.totalPages = Math.ceil(filteredOrders.length / this.itemsPerPage);
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-    this.paginatedOrders = filteredOrders.slice(startIndex, startIndex + this.itemsPerPage);
+    this.paginatedOrders = filteredOrders.slice(
+      startIndex,
+      startIndex + this.itemsPerPage
+    );
   }
 
   goToPage(page: number) {

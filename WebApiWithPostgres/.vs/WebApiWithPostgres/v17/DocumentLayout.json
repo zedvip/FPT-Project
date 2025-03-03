@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|c:\\users\\dell\\desktop\\gitfpt\\webapiwithpostgres\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|c:\\users\\dell\\desktop\\gitfpt\\webapiwithpostgres\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|solutionrelative:controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|c:\\users\\dell\\desktop\\gitfpt\\webapiwithpostgres\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|solutionrelative:models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|c:\\users\\dell\\desktop\\gitfpt\\webapiwithpostgres\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|solutionrelative:models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|c:\\users\\dell\\desktop\\gitfpt\\webapiwithpostgres\\controllers\\orderslistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|solutionrelative:controllers\\orderslistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|c:\\users\\dell\\desktop\\gitfpt\\webapiwithpostgres\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|c:\\users\\dell\\desktop\\gitfpt\\webapiwithpostgres\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|c:\\users\\dell\\desktop\\gitfpt\\webapiwithpostgres\\models\\orderlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|solutionrelative:models\\orderlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|c:\\users\\dell\\desktop\\gitfpt\\webapiwithpostgres\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,12 +39,12 @@
       "RelativeMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|c:\\users\\dell\\desktop\\gitfpt\\webapiwithpostgres\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|solutionrelative:controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|c:\\users\\dell\\desktop\\gitfpt\\webapiwithpostgres\\models\\paginatedlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|solutionrelative:models\\paginatedlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|c:\\users\\dell\\desktop\\gitfpt\\webapiwithpostgres\\controllers\\orderslistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|solutionrelative:controllers\\orderslistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|c:\\users\\dell\\desktop\\gitfpt\\webapiwithpostgres\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4AA5A811-6984-47B6-8B81-23908297A6E9}|WebApiWithPostgres.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,8 +54,39 @@
       "DocumentGroups": [
         {
           "DockedHeight": 178,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrdersListController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Controllers\\OrdersListController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrdersListController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Controllers\\OrdersListController.cs",
+              "RelativeToolTip": "Controllers\\OrdersListController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAADwAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T04:20:38.396Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrdersController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "Controllers\\OrdersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T07:47:58.267Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -48,93 +95,108 @@
               "RelativeDocumentMoniker": "Models\\Order.cs",
               "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Models\\Order.cs",
               "RelativeToolTip": "Models\\Order.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T15:11:21.869Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB0AAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T07:33:33.005Z",
+              "WhenOpened": "2025-02-27T07:46:09.812Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "Controllers\\ProductController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAACkAAAAFAAAAAAAAAA==",
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Models\\OrderItem.cs",
+              "RelativeDocumentMoniker": "Models\\OrderItem.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Models\\OrderItem.cs",
+              "RelativeToolTip": "Models\\OrderItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T07:27:51.413Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "Models\\Product.cs",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Models\\Product.cs",
-              "RelativeToolTip": "Models\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T07:25:57.508Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "Controllers\\OrderController.cs",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "Controllers\\OrderController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T15:09:03.474Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "OrdersListController.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Controllers\\OrdersListController.cs",
-              "RelativeDocumentMoniker": "Controllers\\OrdersListController.cs",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Controllers\\OrdersListController.cs",
-              "RelativeToolTip": "Controllers\\OrdersListController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T04:37:58.567Z",
+              "WhenOpened": "2025-02-27T07:45:36.994Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T04:19:36.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAADwvzEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T06:26:00.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Models\\Product.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Models\\Product.cs",
+              "RelativeToolTip": "Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T05:08:14.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-26T04:29:46.739Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
               "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Data\\AppDbContext.cs",
               "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAswBMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T14:11:31.139Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T04:21:25.474Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PaginatedList.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Models\\PaginatedList.cs",
+              "RelativeDocumentMoniker": "Models\\PaginatedList.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Models\\PaginatedList.cs",
+              "RelativeToolTip": "Models\\PaginatedList.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T04:21:04.474Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrderList.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Models\\OrderList.cs",
+              "RelativeDocumentMoniker": "Models\\OrderList.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\gitFPT\\WebApiWithPostgres\\Models\\OrderList.cs",
+              "RelativeToolTip": "Models\\OrderList.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T04:21:03.228Z"
             }
           ]
         },
@@ -149,7 +211,7 @@
           ]
         },
         {
-          "DockedHeight": 122,
+          "DockedHeight": 71,
           "SelectedChildIndex": -1,
           "Children": [
             {

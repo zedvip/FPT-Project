@@ -1,15 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CartService } from '../services/cart.service';
 import { Router } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from '../services/product.service';
-
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule],
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
@@ -17,28 +15,37 @@ import { ProductService } from '../services/product.service';
 export class HomeComponent implements OnInit {
   products: any[] = [];
   searchQuery: string = '';
-  filteredProducts: any[] = [];
   paginatedProducts: any[] = [];
+
+  // Phân trang
   itemsPerPage = 4;
   currentPage = 1;
+  totalItems = 0;
   totalPages = 1;
 
   constructor(
     private router: Router,
-    private cartService: CartService,
-    private productService: ProductService
+    private productService: ProductService,
+    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
     document.title = 'Trang chủ';
-    this.fetchProducts();
+    this.getProducts();
   }
 
-  fetchProducts() {
-    this.productService.getProducts().subscribe({
+  getProducts() {
+    this.productService.getPagedProducts(this.searchQuery, this.currentPage, this.itemsPerPage).subscribe({
       next: (data) => {
-        this.products = (<any[]>data).filter((p) => p.stock > 0);
-        this.updateFilteredProducts();
+        console.log('Dữ liệu API trả về:', data);
+
+        this.products = data.products || [];
+        this.totalItems = data.totalItems || 0;
+        this.totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
+
+        this.paginatedProducts = this.products.slice();
+
+        console.log('Sản phẩm hiển thị:', this.paginatedProducts);
       },
       error: (error) => {
         console.error('Lỗi khi lấy sản phẩm:', error);
@@ -47,40 +54,26 @@ export class HomeComponent implements OnInit {
   }
 
 
-
-  addToCart(product: any) {
-    this.cartService.addToCart(product);
-    alert('Đã thêm vào giỏ hàng!');
-  }
-
-  updateFilteredProducts() {
-    this.filteredProducts = this.products.filter(
-      (product) =>
-        product.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-        product.phone.includes(this.searchQuery)
-    );
+  searchProducts() {
     this.currentPage = 1;
-    this.updatePagination();
-  }
-
-  updatePagination() {
-    this.totalPages = Math.ceil(this.filteredProducts.length / this.itemsPerPage);
-    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-    const endIndex = startIndex + this.itemsPerPage;
-    this.paginatedProducts = this.filteredProducts.slice(startIndex, endIndex);
+    this.getProducts();
   }
 
   goToPage(page: number) {
     if (page >= 1 && page <= this.totalPages) {
       this.currentPage = page;
-      this.updatePagination();
+      this.getProducts();
     }
   }
 
   getPages(): number[] {
-    return Array(this.totalPages)
-      .fill(0)
-      .map((_, i) => i + 1);
+    return Array.from({ length: this.totalPages }, (_, i) => i + 1);
+  }
+
+  addToCart(product: any) {
+    this.cartService.addToCart(product);
+    alert(`${product.name} đã được thêm vào giỏ hàng!`);
+    console.log('Thêm vào giỏ hàng:', product);
   }
 
   moveToCart() {

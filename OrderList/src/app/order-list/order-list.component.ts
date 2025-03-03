@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { OrderService } from '../services/order.service';
+import { OrderListService } from '../services/orderlist.service';
 
 @Component({
   selector: 'app-order-list',
@@ -21,11 +21,12 @@ export class OrderListComponent implements OnInit {
   // Phân trang
   currentPage: number = 1;
   itemsPerPage: number = 5;
+
   totalItems: number = 0;
   totalPages: number = 1;
   paginatedOrders: any[] = [];
 
-  constructor(private router: Router, private orderService: OrderService) {}
+  constructor(private router: Router, private orderService: OrderListService) {}
 
   ngOnInit(): void {
     this.getOrderData();

@@ -7,10 +7,10 @@ import { ProductService } from '../services/product.service';
   standalone: true,
   selector: 'app-admin',
   imports: [CommonModule, FormsModule],
-  templateUrl: './admin.component.html',
-  styleUrl: './admin.component.css'
+  templateUrl: './add-product.component.html',
+  styleUrl: './add-product.component.css',
 })
-export class AdminComponent {
+export class AddproductComponent {
   products: any[] = [];
   newProduct = { id: 0, name: '', price: 0, image: '', stock: 0 };
   editingProduct: any = null; // Biến để lưu sản phẩm đang chỉnh sửa
@@ -20,7 +20,7 @@ export class AdminComponent {
   }
 
   loadProducts() {
-    this.productService.getProducts().subscribe(data => {
+    this.productService.getProducts().subscribe((data) => {
       this.products = data;
     });
   }
@@ -39,13 +39,16 @@ export class AdminComponent {
   }
 
   deleteProduct(id: number) {
-    this.productService.deleteProduct(id).subscribe(() => {
-      alert('Xóa sản phẩm thành công!');
-      this.loadProducts();
-    }, error => {
-      console.error('Lỗi khi xóa sản phẩm:', error);
-      alert('Không thể xóa sản phẩm, vui lòng thử lại!');
-    });
+    this.productService.deleteProduct(id).subscribe(
+      () => {
+        alert('Xóa sản phẩm thành công!');
+        this.loadProducts();
+      },
+      (error) => {
+        console.error('Lỗi khi xóa sản phẩm:', error);
+        alert('Không thể xóa sản phẩm, vui lòng thử lại!');
+      }
+    );
   }
 
   editProduct(product: any) {
@@ -63,5 +66,4 @@ export class AdminComponent {
   cancelEdit() {
     this.editingProduct = null; // Hủy chỉnh sửa
   }
-
-  }
+}

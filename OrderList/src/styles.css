@@ -10,12 +10,14 @@ body{
   justify-content: center;
   align-items: center;
   min-height: 80vh; /* Chiều cao tối thiểu là 100% viewport */
+  
 }
 
 .container {
   background: #fff; /* Nền trắng cho container */
   border-radius: 12px; /* Bo tròn góc */
   box-shadow: 0 4px 10px rgba(241, 7, 38, 0.2); /* Đổ bóng nhẹ */
+
 }
 hr {
   border-top: 2px solid #151516; /* Tăng độ dày và màu của đường kẻ */

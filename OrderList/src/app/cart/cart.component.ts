@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { CartService } from '../services/cart.service';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CartService } from '../services/cart.service';
 
 @Component({
   standalone: true,
@@ -10,60 +10,60 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
 })
-export class CartComponent {
+export class CartComponent implements OnInit {
   cartItems: any[] = [];
-
-  // Thêm các biến để binding với form
   customerName: string = '';
-  customerAddress: string = '';
-  customerPhone: string = '';
+  address: string = '';
+  phoneNumber: string = '';
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService) {}
+
+  ngOnInit() {
     this.cartService.cartItems$.subscribe(items => {
       this.cartItems = items;
     });
   }
 
-  increaseQuantity(product: any) {
-    this.cartService.updateCart(product.id, product.quantity + 1);
-  }
-
-  decreaseQuantity(product: any) {
-    if (product.quantity > 1) {
-      this.cartService.updateCart(product.id, product.quantity - 1);
-    } else {
-      this.removeItem(product.id);
+  decreaseQuantity(item: any) {
+    if (item.quantity > 1) {
+      item.quantity--;
+      this.cartService.updateQuantity(item.productId, item.quantity);
     }
   }
 
-  removeItem(productId: number) {
-    this.cartService.updateCart(productId, 0);
+  increaseQuantity(item: any) {
+    item.quantity++;
+    this.cartService.updateQuantity(item.productId, item.quantity);
   }
 
-  clearCart() {
-    this.cartService.clearCart();
+  updateQuantity(item: any) {
+    if (item.quantity < 1) {
+      item.quantity = 1;
+    }
+    this.cartService.updateQuantity(item.productId, item.quantity);
+  }
+
+  removeFromCart(item: any) {
+    this.cartService.removeFromCart(item.productId);
+  }
+
+  getTotalPrice() {
+    return this.cartService.getTotalPrice();
   }
 
   placeOrder() {
-    if (!this.customerName || !this.customerAddress || !this.customerPhone) {
+    if (!this.customerName || !this.address || !this.phoneNumber) {
       alert('Vui lòng nhập đầy đủ thông tin khách hàng!');
       return;
     }
 
-    const order = {
-      customerName: this.customerName,
-      customerAddress: this.customerAddress,
-      customerPhone: this.customerPhone,
-      items: this.cartItems.map(item => ({
-        name: item.name,
-        quantity: item.quantity,
-        price: item.price
-      }))
-    };
-
-    this.cartService.saveOrder(order).subscribe(response => {
-      alert('Đặt hàng thành công!');
-      this.cartService.clearCart(); // Xóa giỏ hàng sau khi đặt hàng
+    this.cartService.placeOrder(this.customerName, this.address, this.phoneNumber).subscribe(response => {
+      if (response.success) {
+        alert('Đặt hàng thành công! Mã đơn: ' + response.orderId);
+        this.cartService.clearCart();
+      } else {
+        alert('Đặt hàng thất bại: ' + response.message);
+      }
     });
   }
 }

@@ -1,47 +1,43 @@
 <div class="cart-container">
-  <h2 class="cart-title">🛒 CART</h2>
-  <hr class="mb-4" />
+  <h2>Giỏ hàng của bạn</h2>
 
-  <div *ngIf="cartItems.length > 0; else emptyCart">
-      <div *ngFor="let item of cartItems" class="cart-item">
-        <div class="cart-item-products">
-          <img [src]="item.image" alt="Product Image" class="cart-item-image">
-          <p class="cart-item-name">{{ item.name }}</p>
-        </div>
-          <div class="cart-item-info">
-
-              <p class="cart-item-price">{{ item.price }}$ x {{ item.quantity }}</p>
-
-              <div class="quantity-controls">
-                  <button class="btn btn-primary" (click)="decreaseQuantity(item.id)">➖</button>
-                  <span>{{ item.quantity }}</span>
-                  <button class="btn btn-success" (click)="increaseQuantity(item)">➕</button>
-              </div>
-
-              <button class="btn btn-delete" (click)="removeItem(item.id)">❌ Xóa</button>
-          </div>
-      </div>
-
-      <div class="cart-buttons">
-          <button class="btn btn-clear" (click)="clearCart()">🗑 Xóa tất cả</button>
-      </div>
+  <div *ngIf="cartItems.length === 0" class="empty-cart">
+    <p>Giỏ hàng trống</p>
   </div>
 
-  <div class="order-form">
-    <h3>Thông tin đặt hàng</h3>
-    <label>Họ tên:</label>
-    <input type="text" [(ngModel)]="customerName" required>
+  <div *ngFor="let item of cartItems" class="cart-item">
+    <div class="cart-image">
+      <img [src]="item.product?.image" alt="Product Image" class="cart-item-image">
+      <h4>{{ item.product?.name }}</h4>
+    </div>
 
-    <label>Địa chỉ:</label>
-    <input type="text" [(ngModel)]="customerAddress" required>
-
-    <label>Số điện thoại:</label>
-    <input type="text" [(ngModel)]="customerPhone" required>
-
-    <button class="btn btn-order" (click)="placeOrder()">🛒 Đặt hàng</button>
+    <div class="cart-item-info">
+      <p>Giá: {{ item.product?.price | currency:'USD' }}</p>
+      <div class="quantity-control">
+        <button (click)="decreaseQuantity(item)">-</button>
+        <input type="number" [(ngModel)]="item.quantity" min="1" (change)="updateQuantity(item)">
+        <button (click)="increaseQuantity(item)">+</button>
+      </div>
+      <button class="remove-button" (click)="removeFromCart(item)">Xóa</button>
+    </div>
   </div>
 
-  <ng-template #emptyCart>
-      <p class="empty-cart">Giỏ hàng trống.</p>
-  </ng-template>
+  <div class="cart-summary">
+    <h3>Tổng tiền: {{ getTotalPrice() | currency:'USD' }}</h3>
+
+    <!-- Form nhập thông tin khách hàng -->
+    <div class="customer-info">
+      <label for="customerName">Họ tên:</label>
+      <input id="customerName" [(ngModel)]="customerName" required>
+
+      <label for="phoneNumber">Số điện thoại:</label>
+      <input id="phoneNumber" [(ngModel)]="phoneNumber" required>
+
+      <label for="address">Địa chỉ:</label>
+      <input id="address" [(ngModel)]="address" required>
+    </div>
+
+
+    <button class="checkout-button" (click)="placeOrder()">Đặt hàng</button>
+  </div>
 </div>

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class OrderService {
+export class OrderListService {
   private apiUrl = 'https://localhost:7009/api/OrdersList';
 
   constructor(private http: HttpClient) {}
@@ -29,7 +29,9 @@ export class OrderService {
       .set('page', page.toString())
       .set('pageSize', pageSize.toString());
 
-    return this.http.get<any>(`https://localhost:7009/api/OrdersList`, { params });
+    return this.http.get<any>(`https://localhost:7009/api/OrdersList`, {
+      params,
+    });
   }
 
   addOrder(order: any): Observable<any> {
@@ -39,7 +41,6 @@ export class OrderService {
   updateOrder(order: any): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/${order.id}`, order);
   }
-
 
   deleteOrder(orderId: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/${orderId}`);

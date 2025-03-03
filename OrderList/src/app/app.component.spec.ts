@@ -16,7 +16,7 @@ export interface Order {
   providedIn: 'root',
 })
 export class OrderService {
-  private baseUrl = 'http://localhost:5000/api/orders'; // Đổi URL nếu cần
+  private baseUrl = 'http://localhost:7009/api/orders'; // Đổi URL nếu cần
 
   constructor(private http: HttpClient) {}
 

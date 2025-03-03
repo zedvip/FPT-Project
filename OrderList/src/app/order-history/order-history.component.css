@@ -1,0 +1,24 @@
+.order-history-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: floralwhite;
+}
+
+.order-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.order-item h3 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+.no-orders {
+  text-align: center;
+  font-size: 18px;
+  color: gray;
+}

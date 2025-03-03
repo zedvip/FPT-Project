@@ -1,103 +1,111 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using WebApiWithPostgres.Data;
 using WebApiWithPostgres.Models;
-using WebApiWithPostgres.Services;
 
-namespace WebApiWithPostgres.Controllers;
-
-
-
-[Route("api/[controller]")]
-[ApiController]
-public class OrdersController : ControllerBase
+namespace WebApiWithPostgres.Controllers
 {
-    private readonly IOrderService _service;
-
-    public OrdersController(IOrderService service)
+    [Route("api/[controller]")]
+    [ApiController]
+    public class OrdersController : ControllerBase
     {
-        _service = service;
-    }
+        private readonly AppDbContext _context;
 
-    // GET: api/orders
-    [HttpGet]
-    public async Task<IActionResult> GetOrders(int page, int pageSize, string? searchText)
-    {
-        // Kiểm tra tham số đầu vào
-        if (page <= 0 || pageSize <= 0)
+        public OrdersController(AppDbContext context)
         {
-            return BadRequest("Page and pageSize must be greater than zero.");
+            _context = context;
         }
 
-        // Lấy dữ liệu phân trang
-        var paginatedOrders = await _service.GetOrdersPaginatedAsync(page, pageSize, searchText);
-
-      
-
-        // Trả về kết quả
-        return Ok(new
+        // API lấy danh sách đơn hàng
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
         {
-            paginatedOrders.Items,
-            paginatedOrders.Page,
-            paginatedOrders.PageSize,
-            paginatedOrders.TotalItems,
-            paginatedOrders.TotalPages
-        });
-    }
+            var orders = await _context.Orders
+                .Include(o => o.Items)
+                .Select(o => new
+                {
+                    o.Id,
+                    o.CustomerName,
+                    o.Address,
+                    o.PhoneNumber,
+                    o.Date,
+                    o.TotalPrice, 
+                    Items = o.Items.Select(i => new
+                    {
+                        i.ProductId,
+                        i.Quantity,
+                        i.Price
+                    }).ToList()
+                })
+                .ToListAsync();
 
-
-    // GET: api/orders/{id}
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetOrderById(int id)
-    {
-        var order = await _service.GetOrdersAsync(id);
-        if (order == null)
-        {
-            return NotFound();
-        }
-        return Ok(order);
-    }
-
-    // POST: api/orders
-    [HttpPost]
-    public async Task<IActionResult> CreateOrder([FromBody] Order order)
-    {
-        if (!ModelState.IsValid)
-        {
-            return BadRequest(ModelState);
+            return Ok(orders);
         }
 
-        var createdOrder = await _service.CreateOrderAsync(order);
-        return CreatedAtAction(nameof(GetOrderById), new { id = createdOrder.Id }, createdOrder);
-    }
 
-    // PUT: api/orders/{id}
-    [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateOrder(int id, [FromBody] Order order)
-    {
-        if (!ModelState.IsValid)
+        // API đặt hàng
+        [HttpPost]
+        public async Task<IActionResult> PlaceOrder([FromBody] Order order)
         {
-            return BadRequest(ModelState);
+            if (order == null || order.Items == null || order.Items.Count == 0)
+            {
+                return BadRequest(new { success = false, message = "Giỏ hàng trống!" });
+            }
+
+            List<string> outOfStockItems = new List<string>();
+
+            // Kiểm tra tồn kho
+            foreach (var item in order.Items)
+            {
+                var product = await _context.Products.FindAsync(item.ProductId);
+                if (product == null || product.Stock < item.Quantity)
+                {
+                    outOfStockItems.Add($"Sản phẩm {item.ProductId} không đủ hàng!");
+                }
+            }
+
+            if (outOfStockItems.Count > 0)
+            {
+                return BadRequest(new { success = false, message = string.Join("\n", outOfStockItems) });
+            }
+
+            // Tạo đơn hàng mới
+            var newOrder = new Order
+            {
+                CustomerName = order.CustomerName,
+                Address = order.Address,
+                PhoneNumber = order.PhoneNumber,
+                Date = DateTime.UtcNow,
+                TotalPrice = order.Items.Sum(i => i.Quantity * i.Price), 
+                Items = new List<OrderItem>()
+            };
+
+            _context.Orders.Add(newOrder);
+            await _context.SaveChangesAsync(); // Lưu để có ID đơn hàng
+
+            // Lưu OrderItems và giảm số lượng sản phẩm
+            foreach (var item in order.Items)
+            {
+                var product = await _context.Products.FindAsync(item.ProductId);
+                if (product != null)
+                {
+                    product.Stock -= item.Quantity;
+                }
+
+                var orderItem = new OrderItem
+                {
+                    OrderId = newOrder.Id, // Đảm bảo OrderId được gán đúng
+                    ProductId = item.ProductId,
+                    Quantity = item.Quantity,
+                    Price = item.Price
+                };
+
+                _context.OrderItems.Add(orderItem); // Thêm vào database
+            }
+
+            await _context.SaveChangesAsync(); // Lưu đơn hàng và cập nhật sản phẩm
+
+            return Ok(new { success = true, message = "Đơn hàng đã được tạo!", orderId = newOrder.Id });
         }
-
-        var updatedOrder = await _service.UpdateOrderAsync(id, order);
-
-        if (updatedOrder == null)
-        {
-            return NotFound();
-        }
-
-        return Ok(updatedOrder);
-    }
-
-    // DELETE: api/orders/{id}
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteOrder(int id)
-    {
-        var result = await _service.DeleteOrderAsync(id);
-        if (!result)
-        {
-            return NotFound();
-        }
-
-        return NoContent();
     }
 }
